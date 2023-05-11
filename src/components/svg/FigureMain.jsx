@@ -2,7 +2,7 @@ import React from 'react';
 
 const FigureMain = (props) => {
   return (
-    <svg className={props.className} width="1920" height="847" preserveAspectRatio="xMidYMin slice" viewBox="0 0 1920 847" fill="none" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink">
+    <svg className={props.className} width="1920" height="847" preserveAspectRatio="none" viewBox="0 0 1920 847" fill="none" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink">
       <image preserveAspectRatio="xMidYMin meet" width="1920" height="1305" xlinkHref={props.img} clipPath="url(#figure-1)"/>
       <defs>
         <clipPath id="figure-1">

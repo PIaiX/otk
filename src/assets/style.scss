@@ -22,8 +22,10 @@ $light-gray: #F6F6F6;
 $white: #FFFFFF;
 $green: #4FAC76;
 $dark-green: #236840;
+$gradient: linear-gradient(21.25deg, rgba(51, 153, 171, 0.15) 22.62%, rgba(120, 216, 72, 0.15) 40.45%, rgba(145, 238, 143, 0.15) 52.82%);
+$texture: url(./imgs/texture.png);
 $transition: 300ms ease-in-out;
-$radius: .67em;
+$radius: 1.25em;
 
 
 /* mixins */
@@ -55,7 +57,7 @@ $radius: .67em;
   height: $h;
   z-index: $z;
 }
-@mixin clamp($count, $line, $strict: false) {
+@mixin clamp($count: 1, $line: 1.2em, $strict: false) {
   display: -webkit-box;
   -webkit-line-clamp: $count;
   -webkit-box-orient: vertical;
@@ -82,11 +84,18 @@ $radius: .67em;
     font-weight: $fw;
   }
 }
-@mixin rounedImg($w) {
+@mixin roundedImg($w) {
   width: $w;
   height: $w;
   border-radius: 50%;
   object-fit: cover;
+}
+@mixin img($fit: cover, $h: 100%, $w: 100%, $rad: $radius) {
+  width: $w;
+  height: $h;
+  border-radius: $rad;
+  object-fit: $fit;
+  object-position: center;
 }
 @mixin shadow {
   box-shadow: 0px 8px 10px rgba(141, 141, 141, 0.05);
@@ -100,31 +109,39 @@ a, a:hover, a:focus, a:active {
   cursor: pointer;
 }
 h1, h2, h3, h4, h5, h6, p, label, span, a, button, form, fieldset, legend, select, input, textarea, button, div, blockquote, cite, figure, figcaption, table, ul, ol, dl, li, address {
-  line-height: 130%;
+  line-height: 120%;
   margin-bottom: 0px;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1, h2, h4, h5 {
   font-family: $title-font;
 }
 h1, .h1 {
   font-size: 3.125em;
   font-weight: 400;
+  margin-bottom: 1em;
 }
 h2, .h2 {
   font-size: 2.5em;
   font-weight: 400;
+  margin-bottom: .5em;
 }
 h3 {
   font-size: 1.875em;
-  font-weight: 400;
+  font-weight: 500;
+  margin-bottom: .5em;
 }
 h4 {
   font-size: 1.5em;
-  font-weight: 400;
+  font-weight: 700;
+  margin-bottom: .8em;
 }
 h5 {
   font-size: 1.25em;
+  font-weight: 400;
+}
+h6  {
+  font-size: 1em;
   font-weight: 400;
 }
 .fs {
@@ -219,11 +236,11 @@ button {
 }
 .btn {
   @include flex(row, center, center, nowrap);
-  padding: .65em 1.65em;
+  padding: .5em 1em;
   text-align: center;
   transition: $transition;
   width: fit-content;
-  border-radius: $radius;
+  border-radius: $radius*0.5;
   &-1 {
     @extend .btn;
     color: $white;
@@ -246,7 +263,8 @@ button {
   }
 }
 
-
+.flex-1 {flex:1;}
+.mb-6 {margin-bottom: 6em;}
 
 body {
   margin: 0;
@@ -277,7 +295,7 @@ header {
 .sec-1 {
   position: relative;
   height: 847px;
-  padding-bottom: 6em;
+  padding-bottom: 10em;
   svg {
     @include absBG(1, 0px, 100%);
   }
@@ -313,31 +331,162 @@ header {
 }
 
 .sec-2 {
-  transform: translateY(-50%);
+  margin-top: -18em;
   position: relative;
   z-index: 5;
 }
 .product {
   background-color: $white;
-  padding: 1em;
-  border-radius: $radius*4;
+  padding: .75em;
+  border-radius: $radius;
+  font-size: 1.25em;
+  position: relative;
+  overflow: hidden;
+  @include safariFix();
+  &::before {
+    content: '';
+    @include absBG(0);
+    background: $texture, $gradient;
+    background-size: cover;
+    background-blend-mode: overlay;
+    opacity: 1;
+    transition: $transition;
+  }
+  &:hover {
+    &::before {opacity: 1;}
+  }
   img {
-    width: 100%;
-    height: 250px;
-    object-fit: scale-down;
-    border-radius: $radius*4;
+    --height: 250px;
+    position: relative;
+    z-index: 1;
+    background-color: $white;
+    @include img(scale-down, var(--height));
     @include shadow();
   }
   figcaption {
+    position: relative;
+    z-index: 1;
     margin-top: 1em;
+    h6 {
+      @include clamp(2, 1.2em, true);
+    }
+  }
+}
+
+.sec-3 {
+  .grid {
+    @include list();
+    display: grid;
+    grid-template-columns: 4fr 2fr 4fr;
+    grid-template-rows: 1fr;
+    grid-template-areas: "area1 area2 area3";
+    gap: 1.8em;
+    figure {
+      position: relative;
+      img {
+        --height: 325px;
+        @include img($h: var(--height));
+        @include shadow();
+        margin-bottom: 1em;
+        position: relative;
+        z-index: 1;
+      }
+      figcaption {
+        margin-bottom: 1em;
+      }
+    }
+    &-1 {
+      grid-area: area1;
+    }
+    &-2 {
+      grid-area: area2;
+      figure {
+        img {
+          --height: 375px;
+        }
+        figcaption {
+          @include absBG(2);
+          text-align: center;
+          color: $white;
+          padding: 2em 1em;
+        }
+      }
+    }
+    &-3 {
+      grid-area: area3;
+    }
+  }
+}
+
+.sec-4 {
+  .img-1 {
+    @include img($h: auto);
+    @include shadow();
+  }
+  .img-2 {
+    --height: 240px;
+    @include img($h: var(--height));
+    @include shadow();
+  }
+  p {font-size: 1.25em;}
+  .svg {
+    width: 100%;
+    height: auto;
+    .round {
+      fill: $white;
+      font-size: 1.2em;
+      font-weight: 600;
+      letter-spacing: .66px;
+    }
+    .title {
+      font-family: $title-font;
+      fill: $white;
+      font-size: 4.375em;
+      font-weight: 400;
+    }
+    .text {
+      font-size: 1.5em;
+      font-weight: 400;
+      fill: $white;
+    }
   }
 }
 
 .sec-5 {
-  ul {
-    li {
-      &:not(:first-child){margin-left: 1em;}
+  h2 {
+    img {
+      width: 1.34em;
+      vertical-align: baseline;
     }
+  }
+  ul {
+    font-size: 1.25em;
+    li {
+      &:not(:first-child){margin-left: 2em;}
+    }
+  }
+  .product {
+    img {
+      --height: 330px;
+    }
+  }
+}
+.offers-slider {
+  position: unset;
+  .swiper-button-prev,
+  .swiper-button-next {
+    width: fit-content;
+    height: fit-content;
+    top: 50%;
+    transform: translateY(-50%);
+    margin: 0px;
+  }
+  .swiper-button-prev {left: 4em;}
+  .swiper-button-next {right: 4em;}
+  .swiper-button-prev::after,
+  .swiper-button-next::after {
+    color: $dark;
+    font-size: 1.85em;
   }
 }
 

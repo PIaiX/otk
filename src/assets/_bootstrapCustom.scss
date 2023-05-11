@@ -6,16 +6,12 @@
 @import "../../node_modules/bootstrap/scss/utilities";
 
 $custom-breakpoints: (
-  lg: 1110px,
-  xl: 1290px,
-  xxl: 1470px,
-  xxxl: 1654px
+  xxxl: 1597px
 );
-$grid-breakpoints: map-remove($grid-breakpoints, lg, xl, xxl);
 $grid-breakpoints: map-merge($grid-breakpoints, $custom-breakpoints);
 
 $custom-max-widths: (
-  xxxl: 1504px
+  xxxl: 1517px
 );
 $container-max-widths: map-merge($container-max-widths, $custom-max-widths);
 
