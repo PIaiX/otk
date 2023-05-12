@@ -2,13 +2,14 @@ import React from 'react';
 import Container from 'react-bootstrap/Container';
 import {Link} from 'react-router-dom';
 import Plaix from '../assets/imgs/plaix.svg';
+import PlaixIcon from '../assets/imgs/plaixIcon.svg';
 
 const Footer = () => {
   return (
     <footer>
       <Container className='h-100 d-flex justify-content-between align-items-center'>
         <div>
-          <ul>
+          <ul className='mb-4'>
             <li>
               <Link to="/">Главная</Link>
             </li>
@@ -28,7 +29,7 @@ const Footer = () => {
               <Link to="/">Контакты</Link>
             </li>
           </ul>
-          <ul>
+          <ul className='mb-4'>
             <li>
               <Link to="/">Кондиционеры</Link>
             </li>
@@ -45,11 +46,12 @@ const Footer = () => {
               <Link to="/">Тепловое оборудование</Link>
             </li>
           </ul>
-          <div><Link to="/" className='text-underline'>Политика конфиденциальности</Link></div>
+          <div><Link to="/" className='text-decoration-underline'>Политика конфиденциальности</Link></div>
         </div>
         <div className="devs">
+          <img src={PlaixIcon} alt="Plaix" className='me-2'/>
           <span>Создано в</span>
-          <img src={Plaix} alt="Создано в Plaix" />
+          <img src={Plaix} alt="Создано в Plaix" className='ms-1'/>
         </div>
       </Container>
     </footer>

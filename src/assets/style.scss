@@ -23,7 +23,6 @@ $white: #FFFFFF;
 $green: #4FAC76;
 $dark-green: #236840;
 $gradient: linear-gradient(21.25deg, rgba(51, 153, 171, 0.15) 22.62%, rgba(120, 216, 72, 0.15) 40.45%, rgba(145, 238, 143, 0.15) 52.82%);
-$texture: url(./imgs/texture.png);
 $transition: 300ms ease-in-out;
 $radius: 1.25em;
 
@@ -138,7 +137,8 @@ h4 {
 }
 h5 {
   font-size: 1.25em;
-  font-weight: 400;
+  font-weight: 500;
+  margin-bottom: 1em;
 }
 h6  {
   font-size: 1em;
@@ -236,11 +236,12 @@ button {
 }
 .btn {
   @include flex(row, center, center, nowrap);
-  padding: .5em 1em;
+  padding: .7em 1.2em;
   text-align: center;
   transition: $transition;
   width: fit-content;
   border-radius: $radius*0.5;
+  font-weight: 600;
   &-1 {
     @extend .btn;
     color: $white;
@@ -261,10 +262,24 @@ button {
       background-color: $dark;
     }
   }
+  &-3 {
+    @extend .btn;
+    color: $white;
+    background-color: $black;
+  }
+}
+
+.star-rating {
+  color: $green;
+  @include flex();
+  font-size: 1.6em;
+  svg {
+    &:not(:first-child){margin-left: .25em;}
+  }
 }
 
 .flex-1 {flex:1;}
-.mb-6 {margin-bottom: 6em;}
+.mb-6 {margin-bottom: 8em;}
 
 body {
   margin: 0;
@@ -346,9 +361,8 @@ header {
   &::before {
     content: '';
     @include absBG(0);
-    background: $texture, $gradient;
+    background: url(../assets/imgs/bg/bg-gradient.jpg) no-repeat center;
     background-size: cover;
-    background-blend-mode: overlay;
     opacity: 1;
     transition: $transition;
   }
@@ -480,13 +494,170 @@ header {
     top: 50%;
     transform: translateY(-50%);
     margin: 0px;
+    &::after {
+      color: $dark;
+      font-size: 1.85em;
+    }
   }
   .swiper-button-prev {left: 4em;}
   .swiper-button-next {right: 4em;}
-  .swiper-button-prev::after,
-  .swiper-button-next::after {
-    color: $dark;
-    font-size: 1.85em;
+}
+
+.sec-6 {
+  margin-top: 15em;
+  form {
+    position: relative;
+    z-index: 1;
+    background: url(../assets/imgs/bg/bg-palegreen.jpg) no-repeat center;
+    background-size: cover;
+    border-radius: $radius;
+    padding: 3em 9em 3em 30%;
+    @include shadow();
+  }
+  .img {
+    position: absolute;
+    z-index: 10;
+    bottom: 0px;
+    left: 1%;
+    width: 30%;
+  }
+}
+
+.sec-7 {
+  .review {
+    background-color: $white;
+    color: $black;
+    border-radius: $radius;
+    padding: 2em;
+    font-family: $title-font;
+    text-align: center;
+    font-size: 1.1em;
+    .star-rating {
+      margin-bottom: 1em;
+    }
+  }
+  .reviews-slider {
+    position: relative;
+    padding-bottom: 5em;
+    .swiper-slide-active {
+      .review {
+        background-color: $dark;
+        color: $white;
+      }
+    }
+    .swiper-button-prev,
+    .swiper-button-next {
+      width: 3em;
+      height: 3em;
+      top: unset;
+      bottom: 0px;
+      transform: unset;
+      margin: 0px;
+      border-radius: $radius*.5;
+      background-color: $dark;
+      color: $white;
+      &::after {
+        font-size: 1.3em;
+      }
+    }
+    .swiper-button-prev {
+      left: unset;
+      right: calc(50% + 1.5em);
+    }
+    .swiper-button-next {
+      right: unset;
+      left: calc(50% + 1.5em);
+    }
+  }
+}
+
+.sec-8 {
+  .title {
+    background: url(../assets/imgs/bg/bg-green.jpg) no-repeat;
+    background-size: cover;
+    color: $white;
+    @include flex(row, space-between, center, nowrap);
+    border-radius: $radius;
+    padding: 1.7em 2em;
+  }
+  .news {
+    position: relative;
+    img {
+      @include img($h: 315px);
+    }
+    figcaption {
+      @include flex(row, space-between, center, nowrap);
+      margin-bottom: 1em;
+      h6 {
+        font-size: .95em;
+        font-weight: 500;
+      }
+      a {
+        background-color: $dark;
+        color: $white;
+        font-size: 1em;
+        width: 1.5em;
+        height: 1.5em;
+        border-radius: $radius*.25;
+        margin-left: 1em;
+        @include flex();
+        transition: $transition;
+        &:hover {
+          background-color: $dark-green;
+        }
+      }
+    }
+  }
+}
+
+.sec-9 {
+  .title {
+    background: url(../assets/imgs/bg/bg-blue.jpg) no-repeat;
+    background-size: cover;
+    color: $white;
+    border-radius: $radius;
+    padding: 1.7em 4em;
+  }
+}
+.quiz {
+  position: relative;
+  &-pagination {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 200px;
+    height: 70px;
+    &-bullets {
+      @include flex(row, flex-start, center, nowrap);
+      div {
+        background-color: rgba($green, .5);
+        width: $radius*.5;
+        height: $radius*.5;
+        border-radius: $radius*.5;
+        transition: $transition;
+        &:not(:first-child){margin-left: 1em;}
+        &.active {
+          background-color: rgba($green, 1);
+          width: 3em;
+        }
+      }
+    }
+  }
+  &-top {
+    position: relative;
+    z-index: 1;
+    padding-left: 250px;
+    height: 70px;
+    @include flex(column, center, flex-start, nowrap);
+  }
+  &-main {
+    position: relative;
+    z-index: 1;
+    background-color: $light-gray;
+    border-radius: $radius;
+    @include shadow();
+    padding: 2em 4em;
+    margin-top: 1em;
   }
 }
 
@@ -497,5 +668,11 @@ footer {
   ul {
     @include list();
     @include flex(row, flex-start, center, nowrap);
+    li {
+      &:not(:first-child) {margin-left: 2em;}
+    }
+  }
+  .devs {
+    @include flex();
   }
 }

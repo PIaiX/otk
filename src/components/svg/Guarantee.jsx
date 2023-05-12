@@ -6,11 +6,11 @@ const Guarantee = (props) => {
   return (
     <svg className={props.className} width="880" height="276" viewBox="0 0 880 276" fill="none" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink">
       <image width="880" height="276" xlinkHref={BG} preserveAspectRatio="none" clipPath="url(#figure-2)"/>
-      <text x="47" y="100" class="title">3 года</text>
-      <text x="291" y="78" class="text">гарантия</text>
-      <text x="291" y="78" dy="30" class="text">на оборудование</text>
+      <text x="47" y="100" className="title">3 года</text>
+      <text x="291" y="78" className="text">гарантия</text>
+      <text x="291" y="78" dy="30" className="text">на оборудование</text>
       <path d="M573,156a92,92 0 1,1 184,0a92,92 0 1,1 -184,0" id="MyPath" fill="none"/>
-      <text class="round">
+      <text className="round">
         <textPath href="#MyPath" side="right">безупречная репутация ● безупречная репутация ● </textPath>
       </text>
       <image x="595" y="78" iwidth="135" height="135" xlinkHref={Thumb}/>
