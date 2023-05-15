@@ -13,7 +13,7 @@ const Guarantee = (props) => {
       <text className="round">
         <textPath href="#MyPath" side="right">безупречная репутация ● безупречная репутация ● </textPath>
       </text>
-      <image x="595" y="78" iwidth="135" height="135" xlinkHref={Thumb}/>
+      <image x="595" y="78" width="135" height="135" xlinkHref={Thumb}/>
       <defs>
         <clipPath id="figure-2">
           <path fillRule="evenodd" clipRule="evenodd" d="M880 20C880 8.95431 871.046 0 860 0H20C8.95431 0 0 8.9543 0 20V138C0 149.046 8.95433 158 20 158H525.341C536.259 158 544.983 166.824 546.933 177.567C557.092 233.548 606.088 276 665 276C723.912 276 772.908 233.548 783.067 177.567C785.017 166.824 793.741 158 804.659 158H860C871.046 158 880 149.046 880 138V20Z" />

@@ -3,7 +3,6 @@ import FigureMain from '../components/svg/FigureMain';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import {Link} from 'react-router-dom';
 
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation } from 'swiper';
@@ -17,7 +16,6 @@ import StarRating from '../components/utils/StarRating';
 import NewsCard from '../components/NewsCard';
 import Quiz from '../components/Quiz';
 
-
 const Home = () => {
   return (
     <main>
@@ -30,39 +28,32 @@ const Home = () => {
             </Col>
           </Row>
         </Container>
-        <Link to='/' className='btn-catalog'>
-          <span>в каталог</span>
-        </Link>
       </section>
 
-      <section className='sec-2 mb-6'>
-        <Container className='h-100'>
-          <Row className='h-100 align-items-center'>
-            <Col md={7}>
-              <div className="row row-cols-3">
-                <div>
-                  <ProductCard 
-                    title={"Royal Clima GLORIA"}
-                    img={"imgs/img.png"}
-                  />
-                </div>
-                <div>
-                  <ProductCard 
-                    title={"Hisense EXPERT PRO DC Inverter seria A"}
-                    img={"imgs/img.png"}
-                  />
-                </div>
-                <div>
-                  <ProductCard 
-                    title={"Кондиционер Gree Bora DC Inverter"}
-                    img={"imgs/img.png"}
-                  />
-                </div>
-              </div>
-            </Col>
-          </Row>
-        </Container>
-      </section>
+      <Container>
+        <section className='sec-2 mb-6'>
+          <div className="row row-cols-3">
+            <div>
+              <ProductCard 
+                title={"Royal Clima GLORIA"}
+                img={"imgs/img.png"}
+              />
+            </div>
+            <div>
+              <ProductCard 
+                title={"Hisense EXPERT PRO DC Inverter seria A"}
+                img={"imgs/img.png"}
+              />
+            </div>
+            <div>
+              <ProductCard 
+                title={"Кондиционер Gree Bora DC Inverter"}
+                img={"imgs/img.png"}
+              />
+            </div>
+          </div>
+        </section>
+      </Container>
 
       <section className='sec-3 mb-6'>
         <Container>
@@ -193,7 +184,7 @@ const Home = () => {
           <Swiper
             modules={[Navigation]}
             className='reviews-slider'
-            loop={true}
+            loop={false}
             spaceBetween={30}
             slidesPerView={3}
             centeredSlides={true}
@@ -252,16 +243,12 @@ const Home = () => {
 
       <section className='sec-9 mb-6'>
         <Container>
-          <div className="title mb-5">
+          <div className="title">
             <h2>Вызовите мастера сейчас</h2>
             <h4 className='fw-4 mb-0'>Ответьте на 4 вопроса и получите скидку на монтаж кондиционера</h4>
           </div>
 
-          <Row className='justify-content-end'>
-            <Col xs={12} xxl={11}>
-              <Quiz/>
-            </Col>
-          </Row>
+          <Quiz/>
         </Container>
       </section>
     </main>

@@ -112,7 +112,7 @@ h1, h2, h3, h4, h5, h6, p, label, span, a, button, form, fieldset, legend, selec
   margin-bottom: 0px;
 }
 
-h1, h2, h4, h5 {
+h1, h2, h4 {
   font-family: $title-font;
 }
 h1, .h1 {
@@ -216,6 +216,10 @@ input {
     }
   }
 }
+label {
+  @include flex(row, flex-start, center, nowrap);
+  span {flex:1;}
+}
 select {
   @include no-appearance();
   background-color: transparent;
@@ -242,6 +246,10 @@ button {
   width: fit-content;
   border-radius: $radius*0.5;
   font-weight: 600;
+  &-none {
+    padding: 0px;
+    font-weight: 400;
+  }
   &-1 {
     @extend .btn;
     color: $white;
@@ -266,9 +274,22 @@ button {
     @extend .btn;
     color: $white;
     background-color: $black;
+    border: 1px solid $black;
+    &:hover, &:focus, &:active, &.active {
+      color: $black;
+      border: 1px solid $black;
+      background-color: $white;
+    }
+  }
+  &[disabled] {
+    pointer-events: none;
+    filter: saturate(0%);
   }
 }
 
+/* Blocks */
+.flex-1 {flex:1;}
+.mb-6 {margin-bottom: 8em;}
 .star-rating {
   color: $green;
   @include flex();
@@ -277,9 +298,60 @@ button {
     &:not(:first-child){margin-left: .25em;}
   }
 }
+.dropdown {
+  &-toggle {
+    &::after {
+      background: url(../assets/imgs/chevron-down.svg) no-repeat center;
+      background-size: contain;
+      border: none;
+      width: 8px;
+      height: 6px;
+    }
+  }
+  &-menu {
+    --bs-dropdown-link-active-bg: #4FAC76;
+  }
+}
 
-.flex-1 {flex:1;}
-.mb-6 {margin-bottom: 8em;}
+.product {
+  background-color: $white;
+  padding: .75em;
+  border-radius: $radius;
+  font-size: 1.25em;
+  position: relative;
+  overflow: hidden;
+  @include safariFix();
+  &::before {
+    content: '';
+    @include absBG(0);
+    background: url(../assets/imgs/bg/bg-gradient.jpg) no-repeat center;
+    background-size: cover;
+    opacity: 1;
+    transition: $transition;
+  }
+  &:hover {
+    &::before {opacity: 1;}
+  }
+  img {
+    --height: 250px;
+    position: relative;
+    z-index: 1;
+    background-color: $white;
+    @include img(scale-down, var(--height));
+    @include shadow();
+    @include media-breakpoint-down(xxl) {
+      --height: 230px;
+    }
+  }
+  figcaption {
+    position: relative;
+    z-index: 1;
+    margin-top: 1em;
+    h6 {
+      @include clamp(2, 1.2em, true);
+    }
+  }
+}
 
 body {
   margin: 0;
@@ -305,14 +377,82 @@ header {
   z-index: 100;
   height: var(--h-height);
   background-color: transparent;
+  .logo {
+    display: block;
+    width: 120px;
+    margin-right: 1em;
+    margin-bottom: 0.6em;
+  }
+  .menu {
+    @include list();
+    @include flex();
+    li {
+      &:not(:first-child){
+        margin-left: 4em;
+        @include media-breakpoint-down(xxxl) {
+          margin-left: 2em;
+        }
+        @include media-breakpoint-down(xxl) {
+          margin-left: 1.5em;
+        }
+      }
+      a {
+        color: $black;
+        transition: $transition;
+        &:hover, &:focus {
+          color: $green;
+        }
+        &:active, &.active {
+          color: $dark-green;
+        }
+      }
+    }
+  }
+  form {
+    @include media-breakpoint-down(xxl) {
+      max-width: 200px;
+    }
+  }
+  .phone {
+    font-size: 1.5em;
+    font-weight: 500;
+    @include media-breakpoint-down(xxl) {
+      font-size: 1.1em;
+    }
+  }
+  .cart {
+    font-size: 1.8em;
+    @include media-breakpoint-down(xxl) {
+      font-size: 1.5em;
+    }
+  }
 }
 
 .sec-1 {
   position: relative;
-  height: 847px;
+  height: 850px;
   padding-bottom: 10em;
   svg {
     @include absBG(1, 0px, 100%);
+    .link {
+      &-text {
+        font-size: 1.25em;
+        font-weight: 700;
+        fill: $white;
+        transition: $transition;
+      }
+      &:hover {
+        .link-text {fill: lighten($color: $green, $amount: 15%);}
+      }
+    }
+    .round {
+      fill: $black;
+      font-size: 1.3em;
+      font-weight: 500;
+      letter-spacing: 2.75px;
+      transform-origin: 1409px 728px;
+      animation: rotation 30s infinite linear;
+    }
   }
   .container {
     position: relative;
@@ -349,43 +489,16 @@ header {
   margin-top: -18em;
   position: relative;
   z-index: 5;
+  width: 60%;
+  @include media-breakpoint-down(xxxl) {
+    width: 68%;
+  }
+  @include media-breakpoint-down(xxl) {
+    width: 75%;
+  }
+  .product {font-size: 1.1em;}
 }
-.product {
-  background-color: $white;
-  padding: .75em;
-  border-radius: $radius;
-  font-size: 1.25em;
-  position: relative;
-  overflow: hidden;
-  @include safariFix();
-  &::before {
-    content: '';
-    @include absBG(0);
-    background: url(../assets/imgs/bg/bg-gradient.jpg) no-repeat center;
-    background-size: cover;
-    opacity: 1;
-    transition: $transition;
-  }
-  &:hover {
-    &::before {opacity: 1;}
-  }
-  img {
-    --height: 250px;
-    position: relative;
-    z-index: 1;
-    background-color: $white;
-    @include img(scale-down, var(--height));
-    @include shadow();
-  }
-  figcaption {
-    position: relative;
-    z-index: 1;
-    margin-top: 1em;
-    h6 {
-      @include clamp(2, 1.2em, true);
-    }
-  }
-}
+
 
 .sec-3 {
   .grid {
@@ -404,6 +517,9 @@ header {
         margin-bottom: 1em;
         position: relative;
         z-index: 1;
+        @include media-breakpoint-down(xxxl) {
+          --height: 300px;
+        }
       }
       figcaption {
         margin-bottom: 1em;
@@ -417,6 +533,9 @@ header {
       figure {
         img {
           --height: 375px;
+          @include media-breakpoint-down(xxxl) {
+            --height: 350px;
+          }
         }
         figcaption {
           @include absBG(2);
@@ -441,8 +560,16 @@ header {
     --height: 240px;
     @include img($h: var(--height));
     @include shadow();
+    @include media-breakpoint-down(xxxl) {
+      --height: 210px;
+    }
   }
-  p {font-size: 1.25em;}
+  p {
+    font-size: 1.25em;
+    @include media-breakpoint-down(xxxl) {
+      font-size: 1.1em;
+    }
+  }
   .svg {
     width: 100%;
     height: auto;
@@ -451,6 +578,8 @@ header {
       font-size: 1.2em;
       font-weight: 600;
       letter-spacing: .66px;
+      transform-origin: 665px 156px;
+      animation: rotation 30s infinite linear;
     }
     .title {
       font-family: $title-font;
@@ -463,6 +592,14 @@ header {
       font-weight: 400;
       fill: $white;
     }
+  }
+}
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
   }
 }
 
@@ -482,6 +619,9 @@ header {
   .product {
     img {
       --height: 330px;
+      @include media-breakpoint-down(xxxl) {
+        --height: 300px;
+      }
     }
   }
 }
@@ -505,6 +645,9 @@ header {
 
 .sec-6 {
   margin-top: 15em;
+  @include media-breakpoint-down(xxxl) {
+    margin-top: 10em;
+  }
   form {
     position: relative;
     z-index: 1;
@@ -583,7 +726,11 @@ header {
   .news {
     position: relative;
     img {
-      @include img($h: 315px);
+      --h: 315px;
+      @include img($h: var(--h));
+      @include media-breakpoint-down(xxxl) {
+        --h: 285px;
+      }
     }
     figcaption {
       @include flex(row, space-between, center, nowrap);
@@ -611,55 +758,123 @@ header {
 }
 
 .sec-9 {
-  .title {
-    background: url(../assets/imgs/bg/bg-blue.jpg) no-repeat;
-    background-size: cover;
-    color: $white;
-    border-radius: $radius;
-    padding: 1.7em 4em;
+  --offset: 13%;
+  .container {
+    position: relative;
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: 0px;
+      left: 0px;
+      z-index: 10;
+      width: calc(var(--offset) + 3em);
+      height: 100%;
+      background: url(../assets/imgs/man.png) no-repeat;
+      background-position: left bottom;
+      background-size: contain;
+    }
+    .title {
+      background: url(../assets/imgs/bg/bg-blue.jpg) no-repeat;
+      background-size: cover;
+      color: $white;
+      border-radius: $radius;
+      padding: 1.7em 0em;
+      padding-left: var(--offset);
+      margin-bottom: 2em;
+    }
   }
-}
-.quiz {
-  position: relative;
-  &-pagination {
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    width: 200px;
-    height: 70px;
-    &-bullets {
-      @include flex(row, flex-start, center, nowrap);
-      div {
-        background-color: rgba($green, .5);
-        width: $radius*.5;
-        height: $radius*.5;
-        border-radius: $radius*.5;
-        transition: $transition;
-        &:not(:first-child){margin-left: 1em;}
-        &.active {
-          background-color: rgba($green, 1);
-          width: 3em;
+  .quiz {
+    position: relative;
+    &-pagination {
+      position: absolute;
+      top: 0px;
+      left: var(--offset);
+      width: 200px;
+      height: 50px;
+      &-bullets {
+        @include flex(row, flex-start, center, nowrap);
+        div {
+          background-color: rgba($green, .5);
+          width: $radius*.5;
+          height: $radius*.5;
+          border-radius: $radius*.5;
+          transition: $transition;
+          &:not(:first-child){margin-left: 1em;}
+          &.active {
+            background-color: rgba($green, 1);
+            width: 3em;
+          }
+        }
+      }
+    }
+    &-top {
+      margin-left: var(--offset);
+      position: relative;
+      z-index: 1;
+      padding-left: 200px;
+      height: 70px;
+      @include flex(column, center, flex-start, nowrap);
+    }
+    &-main {
+      margin-left: calc(var(--offset) - 4em);
+      position: relative;
+      z-index: 1;
+      background-color: $light-gray;
+      border-radius: $radius;
+      @include shadow();
+      padding: 4em 8em;
+      margin-top: 1em;
+      @include flex();
+      @include media-breakpoint-down(xxxl) {
+        padding: 3em 5em;
+      }
+      h3 {
+        @include media-breakpoint-down(xxxl) {
+          font-size: 1.5em;
+        }
+      }
+      .variant {
+        width: 100%;
+        &-visual {
+          width: 100%;
+          transition: $transition;
+          img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: $radius;
+            border: 3px solid transparent;
+            background-color: $white;
+            transition: $transition;
+          }
+        }
+        input:checked + .variant-visual {
+          color: $green;
+          img {
+            border-color: $green;
+          }
+        }
+      }
+      .variant-2 {
+        width: 100%;
+        &-visual {
+          width: 100%;
+          background-color: $white;
+          border: 1px solid $black;
+          border-radius: $radius;
+          transition: $transition;
+          padding: .85em;
+        }
+        input:checked + .variant-2-visual {
+          color: $white;
+          background-color: $green;
+          border-color: $green;
         }
       }
     }
   }
-  &-top {
-    position: relative;
-    z-index: 1;
-    padding-left: 250px;
-    height: 70px;
-    @include flex(column, center, flex-start, nowrap);
-  }
-  &-main {
-    position: relative;
-    z-index: 1;
-    background-color: $light-gray;
-    border-radius: $radius;
-    @include shadow();
-    padding: 2em 4em;
-    margin-top: 1em;
-  }
 }
+
 
 footer {
   height: var(--f-height);
@@ -671,6 +886,18 @@ footer {
     li {
       &:not(:first-child) {margin-left: 2em;}
     }
+  }
+  a {
+    transition: $transition;
+    color: $white;
+    &:hover, &:focus {
+      color: lighten($green, 15%);
+    }
+  }
+  .bb-05 {
+    border-bottom: 1px solid rgba($white, .5);
+    line-height: 90%;
+    display: inline-block;
   }
   .devs {
     @include flex();

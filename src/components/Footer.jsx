@@ -46,7 +46,7 @@ const Footer = () => {
               <Link to="/">Тепловое оборудование</Link>
             </li>
           </ul>
-          <div><Link to="/" className='text-decoration-underline'>Политика конфиденциальности</Link></div>
+          <div><Link to="/" className='bb-05'>Политика конфиденциальности</Link></div>
         </div>
         <div className="devs">
           <img src={PlaixIcon} alt="Plaix" className='me-2'/>
