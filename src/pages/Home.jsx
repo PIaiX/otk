@@ -15,15 +15,18 @@ import Woman from '../assets/imgs/woman.png'
 import StarRating from '../components/utils/StarRating';
 import NewsCard from '../components/NewsCard';
 import Quiz from '../components/Quiz';
+import Homuncule from '../assets/imgs/man.png'
+import FigureMainMobile from '../components/svg/FigureMainMobile';
 
 const Home = () => {
   return (
     <main>
       <section className='sec-1'>
-        <FigureMain img={"imgs/img1.jpg"}/>
-        <Container className='h-100'>
-          <Row className='h-100 align-items-center'>
-            <Col md={7}>
+        <FigureMain className="d-none d-md-block" img={"imgs/img1.jpg"}/>
+        <FigureMainMobile className="d-md-none" img={"imgs/img1-mob.jpg"}/>
+        <Container className='h-100 pt-4 pt-md-0'>
+          <Row className='h-100 align-items-md-center'>
+            <Col md={8} xl={7}>
               <h1>Продажа и монтаж кондиционеров, вентиляции и теплового оборудования </h1>
             </Col>
           </Row>
@@ -32,20 +35,20 @@ const Home = () => {
 
       <Container>
         <section className='sec-2 mb-6'>
-          <div className="row row-cols-3">
+          <div className="row row-cols-md-2 row-cols-xl-3 gx-3 gx-xl-4">
             <div>
               <ProductCard 
                 title={"Royal Clima GLORIA"}
                 img={"imgs/img.png"}
               />
             </div>
-            <div>
+            <div className='d-none d-md-block'>
               <ProductCard 
                 title={"Hisense EXPERT PRO DC Inverter seria A"}
                 img={"imgs/img.png"}
               />
             </div>
-            <div>
+            <div className='d-none d-xl-block'>
               <ProductCard 
                 title={"Кондиционер Gree Bora DC Inverter"}
                 img={"imgs/img.png"}
@@ -61,8 +64,8 @@ const Home = () => {
           <ul className="grid">
             <li className="grid-1">
               <figure>
-                <img src="imgs/img2.jpg" alt="Кондиционеры" />
                 <figcaption><h3>Кондиционеры</h3></figcaption>
+                <img src="imgs/img2.jpg" alt="Кондиционеры" />
               </figure>
             </li>
             <li className="grid-2">
@@ -84,22 +87,23 @@ const Home = () => {
       <section className='sec-4 mb-6'>
         <Container>
           <h2>ОТК-СЕРВИС доверяют более 2 000 клиентов</h2>
-          <Row className='gx-5'>
+          <Row className='gx-4 gx-xxl-5'>
             <Col md={5}>
               <img src="imgs/img5.jpg" alt="" className='img-1 mb-4'/>
               <p>Вы можете не только приобрести оборудование, но и заказать его установку. Также мы оказываем услуги по ремонту и обслуживанию.</p>
             </Col>
             <Col md={7}>
-              <Row className='mb-4'>
-                <Col md={8}>
+              <Row className='gx-3 gx-xxl-4 mb-4'>
+                <Guarantee className="svg d-md-none mt-5"/>
+                <Col xs={12} xl={8}>
                   <h4>Вы можете не только приобрести</h4>
                   <p>Вы можете не только приобрести оборудование, но и заказать его установку. Также мы оказываем услуги по ремонту и обслуживанию. Вы можете не только приобрести оборудование, но и заказать его установку. Также мы оказываем услуги по ремонту и обслуживанию.но и заказать его установку. Также мы оказываем услуги по ремонту.</p>
                 </Col>
-                <Col md={4}>
+                <Col xl={4} className='d-none d-xl-block'>
                   <img src="imgs/img6.jpg" alt="" className='img-2' />
                 </Col>
               </Row>
-              <Guarantee className="svg"/>
+              <Guarantee className="svg d-none d-md-block"/>
             </Col>
           </Row>
         </Container>
@@ -108,7 +112,7 @@ const Home = () => {
       <section className='sec-5 mb-6'>
         <Container>
           <h2 className="h1 text-center">Лучшие предложения <img src="imgs/icons/price-rate.svg" alt="rate" /> месяца</h2>
-          <ul className='list-unstyled d-flex justify-content-center align-items-center mb-5'>
+          <ul className='list-unstyled d-flex flex-wrap justify-content-center align-items-center mb-5'>
             <li>
               <button type='button' className='btn-2'>Сплит-системы</button>
             </li>
@@ -124,13 +128,27 @@ const Home = () => {
           </ul>
 
           <Row className='justify-content-center position-relative'>
-            <Col lg={10}>
+            <Col xs={12} xxl={10}>
               <Swiper
                 modules={[Navigation]}
                 className='offers-slider'
-                spaceBetween={30}
-                slidesPerView={3}
+                spaceBetween={5}
+                slidesPerView={2}
                 navigation
+                breakpoints={{
+                  576: {
+                    spaceBetween: 10,
+                    slidesPerView: 2
+                  },
+                  768: {
+                    spaceBetween: 30,
+                    slidesPerView: 2
+                  },
+                  992: {
+                    spaceBetween: 30,
+                    slidesPerView: 3
+                  },
+                }}
               >
                 <SwiperSlide>
                   <ProductCard 
@@ -164,16 +182,17 @@ const Home = () => {
 
       <section className='sec-6 mb-6'>
         <Container className='position-relative'>
-          <form action="">
+          <div className="box">
             <h2>Оставьте заявку на подбор кондиционера</h2>
-            <h5>И мы перезвоним в течение 20 минут, чтобы ответить на все ваши вопросы</h5>
-            <div className="d-flex fs-12 mb-2">
-              <input type="tel" placeholder='+7 ___-___-__-__' className='me-5'/>
-              <input type="text" placeholder='Имя' className='me-5'/>
+            <h5 className='text-center text-lg-start mt-4 mt-lg-0'>И мы перезвоним в течение 20 минут, чтобы ответить на все ваши вопросы</h5>
+            <form>
+              <input type="tel" placeholder='+7 ___-___-__-__'/>
+              <input type="text" placeholder='Имя'/>
               <button type='button' className="btn-1 fw-6">Отправить</button>
-            </div>
-            <p>Нажимая кнопку «Отправить», вы даёте согласие на обработку персональных данных</p>
-          </form>
+              <p>Нажимая кнопку «Отправить», вы даёте согласие на обработку персональных данных</p>
+            </form>
+            
+          </div>
           <img src={Woman} alt="Woman" className='img'/>
         </Container>
       </section>
@@ -184,11 +203,20 @@ const Home = () => {
           <Swiper
             modules={[Navigation]}
             className='reviews-slider'
-            loop={false}
+            loop={true}
             spaceBetween={30}
-            slidesPerView={3}
-            centeredSlides={true}
+            slidesPerView={1}
             navigation
+            breakpoints={{
+              768: {
+                spaceBetween: 30,
+                slidesPerView: 2
+              },
+              992: {
+                spaceBetween: 30,
+                slidesPerView: 3
+              },
+            }}
           >
             <SwiperSlide>
               <div className="review">
@@ -222,32 +250,54 @@ const Home = () => {
         <Container>
           <div className="title mb-5">
             <h2 className='mb-0'>Новости</h2>
-            <button type='button' className='btn-3 me-5'>Читать все записи</button>
+            <button type='button' className='btn-3 me-lg-5'>Читать все записи</button>
           </div>
-          <Row className='g-5'>
-            <Col>
+          <Swiper
+            loop={true}
+            spaceBetween={30}
+            slidesPerView={1}
+            breakpoints={{
+              576: {
+                spaceBetween: 15,
+                slidesPerView: 2
+              },
+              768: {
+                spaceBetween: 15,
+                slidesPerView: 3
+              },
+              992: {
+                spaceBetween: 30,
+                slidesPerView: 3
+              },
+              1200: {
+                spaceBetween: 30,
+                slidesPerView: 4
+              },
+            }}
+          >
+            <SwiperSlide>
               <NewsCard/>
-            </Col>
-            <Col>
+            </SwiperSlide>
+            <SwiperSlide>
               <NewsCard/>
-            </Col>
-            <Col>
+            </SwiperSlide>
+            <SwiperSlide>
               <NewsCard/>
-            </Col>
-            <Col>
+            </SwiperSlide>
+            <SwiperSlide>
               <NewsCard/>
-            </Col>
-          </Row>
+            </SwiperSlide>
+          </Swiper>
         </Container>
       </section>
 
       <section className='sec-9 mb-6'>
         <Container>
+          <img src={Homuncule} alt="homuncule" className='homuncule'/>
           <div className="title">
             <h2>Вызовите мастера сейчас</h2>
             <h4 className='fw-4 mb-0'>Ответьте на 4 вопроса и получите скидку на монтаж кондиционера</h4>
           </div>
-
           <Quiz/>
         </Container>
       </section>

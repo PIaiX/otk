@@ -32,7 +32,7 @@ const Quiz = () => {
           </div>
           <div className="quiz-main">
             <button type='button' className='btn-1 me-4' disabled>Назад</button>
-            <ul className="flex-1 list-unstyled row row-cols-3 gx-xxxl-5">
+            <ul className="flex-1 list-unstyled row row-cols-3 gx-3 gx-xxl-4 gx-xxxl-5">
               <li>
                 <label className='variant'>
                   <input type="radio" name='placement' hidden/>
@@ -74,7 +74,7 @@ const Quiz = () => {
           </div>
           <div className="quiz-main">
             <button type='button' className='btn-1 me-4' onClick={() => setPage(1)}>Назад</button>
-            <ul className="flex-1 list-unstyled row row-cols-3 gx-xxxl-5 gy-4">
+            <ul className="flex-1 list-unstyled row row-cols-3 g-3 gx-xxl-4 gx-xxxl-5 gy-xxl-4">
               <li>
                 <label className='variant-2'>
                   <input type="radio" name='square' hidden/>
@@ -161,7 +161,7 @@ const Quiz = () => {
           </div>
           <div className="quiz-main">
             <button type='button' className='btn-1 me-4' onClick={() => setPage(2)}>Назад</button>
-            <ul className="flex-1 list-unstyled row row-cols-3 gx-xxxl-5">
+            <ul className="flex-1 list-unstyled row row-cols-3 gx-3 gx-xxl-4 gx-xxxl-5">
               <li>
                 <label className='variant'>
                   <input type="radio" name='conditioner' hidden/>
