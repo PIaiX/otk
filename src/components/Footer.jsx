@@ -1,10 +1,9 @@
 import React from 'react';
 import Container from 'react-bootstrap/Container';
 import {Link, NavLink} from 'react-router-dom';
-import Plaix from '../assets/imgs/plaix.svg';
-import PlaixIcon from '../assets/imgs/plaixIcon.svg';
 import useIsMobile from '../hooks/useIsMobile';
 import { HiOutlineHome, HiOutlineSquares2X2, HiOutlineShoppingCart, HiOutlinePhone, HiOutlineUser } from "react-icons/hi2";
+import Devs from './utils/Devs';
 
 const Footer = () => {
   const {isMobile} = useIsMobile('991px');
@@ -92,11 +91,7 @@ const Footer = () => {
             </ul>
             <div><Link to="/" className='bb-05'>Политика конфиденциальности</Link></div>
           </div>
-          <div className="devs">
-            <img src={PlaixIcon} alt="Plaix" className='me-2'/>
-            <span>Создано в</span>
-            <img src={Plaix} alt="Создано в Plaix" className='ms-1'/>
-          </div>
+          <Devs/>
         </Container>
       </footer>
     );

@@ -35,7 +35,7 @@ const Home = () => {
 
       <Container>
         <section className='sec-2 mb-6'>
-          <div className="row row-cols-md-2 row-cols-xl-3 gx-3 gx-xl-4">
+          <div className="row row-cols-md-2 row-cols-lg-3 gx-3 gx-xl-4">
             <div>
               <ProductCard 
                 title={"Royal Clima GLORIA"}
@@ -48,7 +48,7 @@ const Home = () => {
                 img={"imgs/img.png"}
               />
             </div>
-            <div className='d-none d-xl-block'>
+            <div className='d-none d-lg-block'>
               <ProductCard 
                 title={"Кондиционер Gree Bora DC Inverter"}
                 img={"imgs/img.png"}
@@ -60,7 +60,7 @@ const Home = () => {
 
       <section className='sec-3 mb-6'>
         <Container>
-          <h2>Каталог товаров</h2>
+          <h2 className='d-none d-mb-block'>Каталог товаров</h2>
           <ul className="grid">
             <li className="grid-1">
               <figure>
@@ -92,9 +92,9 @@ const Home = () => {
               <img src="imgs/img5.jpg" alt="" className='img-1 mb-4'/>
               <p>Вы можете не только приобрести оборудование, но и заказать его установку. Также мы оказываем услуги по ремонту и обслуживанию.</p>
             </Col>
-            <Col md={7}>
+            <Col md={7} className='d-flex flex-column flex-md-column-reverse mt-5 mt-md-0'>
+              <Guarantee className="svg"/>
               <Row className='gx-3 gx-xxl-4 mb-4'>
-                <Guarantee className="svg d-md-none mt-5"/>
                 <Col xs={12} xl={8}>
                   <h4>Вы можете не только приобрести</h4>
                   <p>Вы можете не только приобрести оборудование, но и заказать его установку. Также мы оказываем услуги по ремонту и обслуживанию. Вы можете не только приобрести оборудование, но и заказать его установку. Также мы оказываем услуги по ремонту и обслуживанию.но и заказать его установку. Также мы оказываем услуги по ремонту.</p>
@@ -103,7 +103,6 @@ const Home = () => {
                   <img src="imgs/img6.jpg" alt="" className='img-2' />
                 </Col>
               </Row>
-              <Guarantee className="svg d-none d-md-block"/>
             </Col>
           </Row>
         </Container>
@@ -111,21 +110,26 @@ const Home = () => {
 
       <section className='sec-5 mb-6'>
         <Container>
-          <h2 className="h1 text-center">Лучшие предложения <img src="imgs/icons/price-rate.svg" alt="rate" /> месяца</h2>
-          <ul className='list-unstyled d-flex flex-wrap justify-content-center align-items-center mb-5'>
-            <li>
+          <h2 className="h1 text-center">Лучшие предложения <img src="imgs/icons/price-rate.svg" alt="rate" className='d-none d-md-inline'/> месяца <img src="imgs/icons/price-rate.svg" alt="rate" className='d-md-none'/></h2>
+
+          <Swiper
+            className='menu-slider'
+            spaceBetween={30}
+            slidesPerView={'auto'}
+          >
+            <SwiperSlide>
               <button type='button' className='btn-2'>Сплит-системы</button>
-            </li>
-            <li>
+            </SwiperSlide>
+            <SwiperSlide>
               <button type='button' className='btn-2 active'>Кондиционеры</button>
-            </li>
-            <li>
+            </SwiperSlide>
+            <SwiperSlide>
               <button type='button' className='btn-2'>Рекуператоры</button>
-            </li>
-            <li>
+            </SwiperSlide>
+            <SwiperSlide>
               <button type='button' className='btn-2'>Бризеры</button>
-            </li>
-          </ul>
+            </SwiperSlide>
+          </Swiper>
 
           <Row className='justify-content-center position-relative'>
             <Col xs={12} xxl={10}>
@@ -199,63 +203,65 @@ const Home = () => {
 
       <section className='sec-7 mb-6'>
         <Container>
-          <h2 className='text-center mb-5'>Отзывы клиентов ОТК-Сервис</h2>
-          <Swiper
-            modules={[Navigation]}
-            className='reviews-slider'
-            loop={true}
-            spaceBetween={30}
-            slidesPerView={1}
-            navigation
-            breakpoints={{
-              768: {
-                spaceBetween: 30,
-                slidesPerView: 2
-              },
-              992: {
-                spaceBetween: 30,
-                slidesPerView: 3
-              },
-            }}
-          >
-            <SwiperSlide>
-              <div className="review">
-                <StarRating rate={3.7}/>
-                <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati</p>
-              </div>
-            </SwiperSlide>
-            <SwiperSlide>
-              <div className="review">
-                <StarRating rate={3.7}/>
-                <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati</p>
-              </div>
-            </SwiperSlide>
-            <SwiperSlide>
-              <div className="review">
-                <StarRating rate={3.7}/>
-                <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati</p>
-              </div>
-            </SwiperSlide>
-            <SwiperSlide>
-              <div className="review">
-                <StarRating rate={3.7}/>
-                <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati</p>
-              </div>
-            </SwiperSlide>
-          </Swiper>
+          <h2 className='text-center mb-md-5'>Отзывы клиентов ОТК-Сервис</h2>
+          <div className="position-relative">
+            <Swiper
+              modules={[Navigation]}
+              className='reviews-slider'
+              loop={true}
+              spaceBetween={30}
+              slidesPerView={1}
+              navigation
+              breakpoints={{
+                768: {
+                  spaceBetween: 30,
+                  slidesPerView: 2
+                },
+                992: {
+                  spaceBetween: 30,
+                  slidesPerView: 3
+                },
+              }}
+            >
+              <SwiperSlide>
+                <div className="review">
+                  <StarRating rate={3.7}/>
+                  <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati</p>
+                </div>
+              </SwiperSlide>
+              <SwiperSlide>
+                <div className="review">
+                  <StarRating rate={3.7}/>
+                  <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati</p>
+                </div>
+              </SwiperSlide>
+              <SwiperSlide>
+                <div className="review">
+                  <StarRating rate={3.7}/>
+                  <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati</p>
+                </div>
+              </SwiperSlide>
+              <SwiperSlide>
+                <div className="review">
+                  <StarRating rate={3.7}/>
+                  <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati</p>
+                </div>
+              </SwiperSlide>
+            </Swiper>
+          </div>
         </Container>
       </section>
 
       <section className='sec-8 mb-6'>
         <Container>
-          <div className="title mb-5">
+          <div className="title mb-4 mb-md-5">
             <h2 className='mb-0'>Новости</h2>
             <button type='button' className='btn-3 me-lg-5'>Читать все записи</button>
           </div>
           <Swiper
             loop={true}
-            spaceBetween={30}
-            slidesPerView={1}
+            spaceBetween={10}
+            slidesPerView={2}
             breakpoints={{
               576: {
                 spaceBetween: 15,

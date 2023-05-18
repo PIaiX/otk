@@ -32,7 +32,7 @@ const Quiz = () => {
           </div>
           <div className="quiz-main">
             <button type='button' className='btn-1 me-4' disabled>Назад</button>
-            <ul className="flex-1 list-unstyled row row-cols-3 gx-3 gx-xxl-4 gx-xxxl-5">
+            <ul className="flex-1 list-unstyled row row-cols-3 gx-2 gx-sm-3 gx-xxl-4 gx-xxxl-5">
               <li>
                 <label className='variant'>
                   <input type="radio" name='placement' hidden/>
@@ -74,7 +74,7 @@ const Quiz = () => {
           </div>
           <div className="quiz-main">
             <button type='button' className='btn-1 me-4' onClick={() => setPage(1)}>Назад</button>
-            <ul className="flex-1 list-unstyled row row-cols-3 g-3 gx-xxl-4 gx-xxxl-5 gy-xxl-4">
+            <ul className="flex-1 list-unstyled row row-cols-2 row-cols-sm-3 g-3 gx-xxl-4 gx-xxxl-5 gy-xxl-4">
               <li>
                 <label className='variant-2'>
                   <input type="radio" name='square' hidden/>
@@ -161,7 +161,7 @@ const Quiz = () => {
           </div>
           <div className="quiz-main">
             <button type='button' className='btn-1 me-4' onClick={() => setPage(2)}>Назад</button>
-            <ul className="flex-1 list-unstyled row row-cols-3 gx-3 gx-xxl-4 gx-xxxl-5">
+            <ul className="flex-1 list-unstyled row row-cols-2 row-cols-sm-3 gx-3 gx-xxl-4 gx-xxxl-5 gy-4">
               <li>
                 <label className='variant'>
                   <input type="radio" name='conditioner' hidden/>
@@ -202,12 +202,12 @@ const Quiz = () => {
             <h3>Скидка 10% уже ждет вас</h3>
           </div>
           <div className="quiz-main">
-            <div className='py-5'>
+            <div className='py-4 py-md-5'>
               <h3>Оставьте контактные данные и менеджер перезвонит вам </h3>
-              <div className="d-flex fs-12 mb-2">
-                <input type="tel" placeholder='+7 ___-___-__-__' className='me-5'/>
-                <input type="text" placeholder='Имя' className='me-5'/>
-                <button type='button' className="btn-1 fw-6">Отправить</button>
+              <div className="d-md-flex fs-12 mb-2">
+                <input type="tel" placeholder='+7 ___-___-__-__' className='mb-3 mb-md-0 me-md-4 me-lg-5'/>
+                <input type="text" placeholder='Имя' className='mb-3 mb-md-0 me-md-4 me-lg-5'/>
+                <button type='button' className="btn-1 fw-6 mx-auto mx-md-0">Отправить</button>
               </div>
               <p>Нажимая кнопку «Отправить», вы даёте согласие на обработку персональных данных</p>
             </div>

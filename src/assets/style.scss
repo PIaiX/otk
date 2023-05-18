@@ -29,6 +29,7 @@ $white: #FFFFFF;
 $green: #4FAC76;
 $dark-green: #236840;
 $gradient: linear-gradient(21.25deg, rgba(51, 153, 171, 0.15) 22.62%, rgba(120, 216, 72, 0.15) 40.45%, rgba(145, 238, 143, 0.15) 52.82%);
+$blue: #5A9BFF;
 $transition: 300ms ease-in-out;
 $radius: 1.25em;
 
@@ -215,6 +216,9 @@ input, textarea {
   display: block;
   transition: $transition;
   @include placeholder($gray, 400);
+  @include media-breakpoint-down(sm) {
+    padding: 1em 1.65em;
+  }
 }
 input {
   &[type='checkbox'], &[type='radio']{
@@ -280,6 +284,7 @@ button {
     padding: 0px;
     font-weight: 400;
   }
+  /* зеленая кнопка */
   &-1 {
     @extend .btn;
     color: $white;
@@ -289,6 +294,7 @@ button {
       background-color: $dark-green;
     }
   }
+  /* кнопка с темной обводкой */
   &-2 {
     @extend .btn;
     color: $black;
@@ -300,6 +306,7 @@ button {
       background-color: $dark;
     }
   }
+  /* темная кнопка */
   &-3 {
     @extend .btn;
     color: $white;
@@ -309,6 +316,17 @@ button {
       color: $black;
       border: 1px solid $black;
       background-color: $white;
+    }
+  }
+  /* белая кнопка */
+  &-4 {
+    @extend .btn;
+    color: $black;
+    background-color: $white;
+    font-weight: 400;
+    &:hover, &:focus, &:active, &.active {
+      color: $black;
+      background-color: lighten($color: $green, $amount: 30%);
     }
   }
   &[disabled] {
@@ -374,6 +392,13 @@ button {
   }
 }
 
+.devs {
+  @include flex();
+  img {
+    width: 2.25em;
+  }
+}
+
 .product {
   background-color: $white;
   padding: .75em;
@@ -409,7 +434,7 @@ button {
     @include media-breakpoint-down(xl) {
       --height: 200px;
     }
-    @include media-breakpoint-down(xl) {
+    @include media-breakpoint-down(sm) {
       --height: 40vw;
     }
   }
@@ -419,6 +444,9 @@ button {
     margin-top: 1em;
     h6 {
       @include clamp(2, 1.2em, true);
+    }
+    @include media-breakpoint-down(sm) {
+      button {width: 100%;}
     }
   }
 }
@@ -436,7 +464,7 @@ body {
   @include media-breakpoint-down(md) {
     font-size: 14px;
   }
-  @include media-breakpoint-down(md) {
+  @include media-breakpoint-down(sm) {
     font-size: 12px;
   }
 }
@@ -444,7 +472,7 @@ body {
 main {
   min-height: calc(100vh - var(--h-height) - var(--f-height));
   @include media-breakpoint-down(lg) {
-    padding: var(--h-height) 0px 0px;
+    padding: var(--h-height) 0px var(--f-height);
   }
 }
 
@@ -453,7 +481,7 @@ header {
   top: 0px;
   left: 0px;
   width: 100%;
-  z-index: 100;
+  z-index: 1050;
   height: var(--h-height);
   background-color: transparent;
   @include media-breakpoint-down(lg) {
@@ -469,7 +497,10 @@ header {
       margin-bottom: 0em;
     }
     img {
-      width: 120px;
+      height: 40px;
+      @include media-breakpoint-down(sm) {
+        height: 35px;
+      }
     }
   }
   .menu {
@@ -519,30 +550,131 @@ header {
   }
   .search-icon {
     font-size: 1.4em;
+    @include flex();
     @include media-breakpoint-down(lg) {
       color: $gray;
+      font-size: 1.75em;
     }
   }
   .btn-menu {
     background-color: $green;
     color: $white;
     margin-left: 1.5em;
-    font-size: 1.5em;
+    font-size: 1.75em;
     padding: .15em;
     border-radius: 5px;
-    @include flex();
+    display: none;
+    @include media-breakpoint-down(lg) {
+      @include flex();
+    }
   }
 }
 .offcanvas-search {
   background-color: $light-gray;
   height: fit-content !important;
+  @include media-breakpoint-down(xl) {
+    padding-top: var(--h-height);
+  }
   .offcanvas-body {
     @include flex();
+    @include media-breakpoint-down(xl) {
+      padding: 1.5em 20%;
+    }
+    @include media-breakpoint-down(lg) {
+      padding: 1.5em 15%;
+    }
+    @include media-breakpoint-down(md) {
+      font-size: 1.3em;
+      padding: 1.5em 10%;
+    }
+    @include media-breakpoint-down(md) {
+      font-size: 1.2em;
+      padding: 1em 5%;
+    }
     form {
       flex: 1;
     }
     .close {
-      margin-left: 2em;
+      margin-left: 1em;
+    }
+  }
+}
+.offcanvas-menu {
+  width: 100% !important;
+  padding: var(--h-height) 0px var(--f-height);
+  .offcanvas-body {
+    padding: 2em 0px;
+    .offer {
+      background-color: $blue;
+      padding: 3em;
+      padding-left: 40%;
+      border-radius: $radius*0.5;
+      color: $white;
+      margin-bottom: 1.5em;
+      position: relative;
+      margin-top: 3em;
+      @include media-breakpoint-down(sm) {
+        padding: 1em;
+        padding-left: 35%;
+      }
+      &::before {
+        content: '';
+        position: absolute;
+        top: -2em;
+        right: -1em;
+        z-index: 0;
+        width: 80%;
+        height: calc(100% + 3em);
+        background: url(imgs/bg/blot.svg) no-repeat;
+        background-position: right center;
+        background-size: contain;
+        @include media-breakpoint-down(sm) {
+          top: -2em;
+          right: -.75em;
+          height: calc(100% + 2.5em);
+          width: 85%;
+        }
+      }
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: 0px;
+        left: 7%;
+        z-index: 1;
+        width: 30%;
+        height: calc(100% + 3em);
+        background: url(imgs/bg/human.png) no-repeat;
+        background-position: left bottom;
+        background-size: contain;
+        @include media-breakpoint-down(sm) {
+          left: 0%;
+          width: 40%;
+        }
+      }
+      h2, h5, button {
+        position: relative;
+        z-index: 2;
+      }
+    }
+    nav {
+      background: url(imgs/bg/bg-gradient-2.jpg) no-repeat center;
+      background-size: 100% 100%;
+      font-size: 1.3em;
+      padding: 1em;
+      border-radius: $radius;
+      ul {
+        li {
+          &:not(:last-child){
+            border-bottom: 1px solid $white;
+            margin-bottom: .5em;
+          }
+          a {
+            display: block;
+            padding: .75em 0 ;
+            width: 100%;
+          }
+        }
+      }
     }
   }
 }
@@ -556,7 +688,7 @@ header {
     padding-bottom: 5em;
   }
   @include media-breakpoint-down(lg) {
-    height: 550px;
+    height: 500px;
     padding-bottom: 3em;
   }
   @include media-breakpoint-down(md) {
@@ -666,6 +798,10 @@ header {
       grid-template-rows: auto;
       grid-template-areas: "area1 area2" "area3 area3";
     }
+    @include media-breakpoint-down(sm) {
+      grid-template-columns: 5fr 3fr;
+      font-size: .8em;
+    }
     figure {
       position: relative;
       img {
@@ -686,6 +822,9 @@ header {
         }
         @include media-breakpoint-down(md) {
           --height: 180px;
+        }
+        @include media-breakpoint-down(sm) {
+          --height: 33vw;
         }
       }
       figcaption {
@@ -717,7 +856,10 @@ header {
             --height: 315px;
           }
           @include media-breakpoint-down(md) {
-            --height: 265px;
+            --height: 245px;
+          }
+          @include media-breakpoint-down(sm) {
+            --height: 44vw;
           }
         }
         figcaption {
@@ -769,6 +911,13 @@ header {
       letter-spacing: .66px;
       transform-origin: 665px 156px;
       animation: rotation 30s infinite linear;
+      @include media-breakpoint-down(md) {
+        font-size: 1.33em;
+        letter-spacing: 1px;
+      }
+      @include media-breakpoint-down(sm) {
+        font-size: 1.55em;
+      }
     }
     .title {
       font-family: $title-font;
@@ -780,6 +929,18 @@ header {
       font-size: 1.5em;
       font-weight: 400;
       fill: $white;
+      @include media-breakpoint-down(md) {
+        font-size: 1.75em;
+      }
+      @include media-breakpoint-down(sm) {
+        font-size: 2em;
+      }
+    }
+  }
+  h4 {
+    @include media-breakpoint-down(md) {
+      width: 60%;
+      margin-top: -1em;
     }
   }
 }
@@ -828,6 +989,14 @@ header {
       @include media-breakpoint-down(xl) {
         --height: 40vw;
       }
+    }
+  }
+  .menu-slider {
+    width: fit-content;
+    margin: 0 auto 4em;
+    padding: 2px 0;
+    .swiper-slide {
+      width: fit-content;
     }
   }
 }
@@ -900,7 +1069,14 @@ header {
       box-shadow: none;
       h2 {
         margin-left: 15%;
+        @include media-breakpoint-down(sm) {
+          font-size: 1.5em;
+          margin-left: 28%;
+        }
       }
+    }
+    @include media-breakpoint-down(sm) {
+      padding: .5em;
     }
     form {
       @include flex(row, flex-start, stretch, wrap);
@@ -958,6 +1134,10 @@ header {
       bottom: calc(100% - 6em);
       width: 20%;
     }
+    @include media-breakpoint-down(sm) {
+      left: 0%;
+      width: 30%;
+    }
   }
 }
 
@@ -979,8 +1159,12 @@ header {
     }
   }
   .reviews-slider {
-    position: relative;
+    position: unset;
     padding-bottom: 5em;
+    @include media-breakpoint-down(md) {
+      width: calc(100% - 6em);
+      padding-bottom: 0em;
+    }
     .swiper-slide-active {
       .review {
         background-color: $dark;
@@ -1002,6 +1186,11 @@ header {
         width: 2.5em;
         height: 2.5em;
       }
+      @include media-breakpoint-down(md) {
+        top: 50%;
+        bottom: unset;
+        transform: translateY(-50%);
+      }
       &::after {
         font-size: 1.3em;
         line-height: 130%;
@@ -1010,10 +1199,18 @@ header {
     .swiper-button-prev {
       left: unset;
       right: calc(50% + 1.5em);
+      @include media-breakpoint-down(md) {
+        left: 0px;
+        right: unset;
+      }
     }
     .swiper-button-next {
       right: unset;
       left: calc(50% + 1.5em);
+      @include media-breakpoint-down(md) {
+        right: 0px;
+        left: unset;
+      }
     }
   }
 }
@@ -1043,6 +1240,9 @@ header {
       }
       @include media-breakpoint-down(lg) {
         --h: 220px;
+      }
+      @include media-breakpoint-down(sm) {
+        --h: 43vw;
       }
     }
     figcaption {
@@ -1096,6 +1296,11 @@ header {
         object-position: center top;
         margin: 0 auto 0 35%;
       }
+      @include media-breakpoint-down(sm) {
+        width: 170px;
+        height: 160px;
+        margin: 0 auto 0 30%;
+      }
     }
     .title {
       background: url(../assets/imgs/bg/bg-blue.jpg) no-repeat;
@@ -1121,6 +1326,10 @@ header {
       @include flex(row, flex-start, stretch, wrap);
       padding: 2em;
     }
+    @include media-breakpoint-down(sm) {
+      padding: 1.25em;
+      font-size: .9em;
+    }
     &-pagination {
       position: absolute;
       top: 0px;
@@ -1133,6 +1342,9 @@ header {
         position: relative;
         h5 {margin-bottom: .5em;}
       }
+      @include media-breakpoint-down(sm) {
+        width: 35%;
+      }
       &-bullets {
         @include flex(row, flex-start, center, nowrap);
         div {
@@ -1141,7 +1353,12 @@ header {
           height: $radius*.5;
           border-radius: $radius*.5;
           transition: $transition;
-          &:not(:first-child){margin-left: 1em;}
+          &:not(:first-child){
+            margin-left: 1em;
+            @include media-breakpoint-down(sm) {
+              margin-left: .5em;
+            }
+          }
           &.active {
             background-color: rgba($green, 1);
             width: 3em;
@@ -1157,9 +1374,12 @@ header {
       height: 70px;
       @include flex(column, center, flex-start, nowrap);
       @include media-breakpoint-down(lg) {
-        padding-left: 0px;
+        padding-left: .75em;
         height: unset;
         width: 70%;
+      }
+      @include media-breakpoint-down(sm) {
+        width: 65%;
       }
       h3 {
         margin-bottom: 0px;
@@ -1193,15 +1413,22 @@ header {
         padding: 0px;
         margin-top: 2em;
         width: 100%;
-        button {
+      }
+      &>ul {
+        @include media-breakpoint-down(lg) {
+          width: 100%;
+          flex: auto;
+          order: 1;
+        }
+      }
+      &>.btn-1 {
+        @include media-breakpoint-down(lg) {
           width: fit-content;
           order: 2;
           margin-top: 1em;
         }
-        ul {
-          width: 100%;
-          flex: auto;
-          order: 1;
+        @include media-breakpoint-down(md) {
+          font-size: 1.35em;
         }
       }
       h3 {
@@ -1231,6 +1458,9 @@ header {
             @include media-breakpoint-down(md) {
               height: 140px;
             }
+            @include media-breakpoint-down(sm) {
+              height: 26vw;
+            }
           }
         }
         input:checked + .variant-visual {
@@ -1259,7 +1489,6 @@ header {
     }
   }
 }
-
 
 footer {
   &.desktop {
@@ -1293,16 +1522,13 @@ footer {
       line-height: 90%;
       display: inline-block;
     }
-    .devs {
-      @include flex();
-    }
   }
   &.mobile {
-    position: sticky;
+    position: fixed;
     bottom: 0px;
     left: 0px;
     width: 100%;
-    z-index: 100;
+    z-index: 1050;
     height: var(--f-height);
     background: #FFFFFF;
     box-shadow: 0px 4px 20px rgba(7, 0, 87, 0.1);
@@ -1316,13 +1542,13 @@ footer {
           a, button {
             @include flex(column, center, center, nowrap);
             svg {
-              font-size: 1.75em;
+              font-size: 2em;
               padding: 0.1em;
               border-radius: 5px;
               stroke-width: 1.25px;
             }
             span {
-              font-size: .7em;
+              font-size: .85em;
               color: $gray;
               margin-top: 0.2em;
             }
