@@ -1,32 +1,27 @@
 {
   "files": {
-    "main.css": "/otk/static/css/main.aaa131bf.css",
-    "main.js": "/otk/static/js/main.b8abacf3.js",
-    "static/media/bg-palegreen.jpg": "/otk/static/media/bg-palegreen.cdc5b0d961a7306fa659.jpg",
-    "static/media/bg-green.jpg": "/otk/static/media/bg-green.bd14eb68a95704fed4c4.jpg",
-    "static/media/apartment.jpg": "/otk/static/media/apartment.fc1f132108e2a2602b3a.jpg",
-    "static/media/woman.png": "/otk/static/media/woman.58ebbf09d431ba2411a3.png",
-    "static/media/bg-blue.jpg": "/otk/static/media/bg-blue.bcf39a508b5d95ee466d.jpg",
-    "static/media/house.jpg": "/otk/static/media/house.0e9eb3ae07a71618d5b4.jpg",
-    "static/media/conditioner1.png": "/otk/static/media/conditioner1.823a1c4f413a5fb51775.png",
-    "static/media/man.png": "/otk/static/media/man.551871ea696e0270460a.png",
-    "static/media/office.jpg": "/otk/static/media/office.0a2ec5f6fd19c1fecb3e.jpg",
-    "static/media/conditioner2.png": "/otk/static/media/conditioner2.87192d225949e0840326.png",
-    "static/media/conditioner3.png": "/otk/static/media/conditioner3.8d2fff3124c9d8370423.png",
-    "static/media/bg-gradient.jpg": "/otk/static/media/bg-gradient.d1edee51f62ce84a5bce.jpg",
+    "main.css": "/otk/static/css/main.4396e394.css",
+    "main.js": "/otk/static/js/main.0ec5f5e2.js",
+    "static/media/conditioner1.png": "/otk/static/media/conditioner1.1d4431bb150b3ae059be.png",
+    "static/media/apartment.jpg": "/otk/static/media/apartment.7a91d442817c6bd3eb29.jpg",
+    "static/media/house.jpg": "/otk/static/media/house.64f405cc62c2fe156157.jpg",
+    "static/media/conditioner2.png": "/otk/static/media/conditioner2.fb589367ec52e12ee993.png",
+    "static/media/woman.png": "/otk/static/media/woman.2edb3ec509a04e57856f.png",
+    "static/media/conditioner3.png": "/otk/static/media/conditioner3.22721355b7af5a7ab7e6.png",
+    "static/media/office.jpg": "/otk/static/media/office.51a5877e42d057dee089.jpg",
+    "static/media/man.png": "/otk/static/media/man.398efdb3b425be84d493.png",
+    "static/media/human.png": "/otk/static/media/human.3922736283a54ea0306b.png",
     "static/media/go.svg": "/otk/static/media/go.1fa522ec550185df401c.svg",
     "static/media/Racama.otf": "/otk/static/media/Racama.7745ff66afcd168cf861.otf",
-    "static/media/thumb.png": "/otk/static/media/thumb.0b1d222c91173ba5f1a7.png",
-    "static/media/logo-colored.png": "/otk/static/media/logo-colored.748f2024bc03e461c798.png",
-    "static/media/plaix.svg": "/otk/static/media/plaix.29113dc61d8fcc0bea545d4d7ad990d3.svg",
     "static/media/plaixIcon.svg": "/otk/static/media/plaixIcon.bc97f35c12935ec378f07475d215f690.svg",
+    "static/media/blot.svg": "/otk/static/media/blot.7aeed329062736887953.svg",
     "index.html": "/otk/index.html",
     "static/media/chevron-down.svg": "/otk/static/media/chevron-down.2dbbddfd9f2bd3e1ef5d.svg",
-    "main.aaa131bf.css.map": "/otk/static/css/main.aaa131bf.css.map",
-    "main.b8abacf3.js.map": "/otk/static/js/main.b8abacf3.js.map"
+    "main.4396e394.css.map": "/otk/static/css/main.4396e394.css.map",
+    "main.0ec5f5e2.js.map": "/otk/static/js/main.0ec5f5e2.js.map"
   },
   "entrypoints": [
-    "static/css/main.aaa131bf.css",
-    "static/js/main.b8abacf3.js"
+    "static/css/main.4396e394.css",
+    "static/js/main.0ec5f5e2.js"
   ]
 }
