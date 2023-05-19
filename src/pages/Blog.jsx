@@ -10,7 +10,7 @@ const Blog = () => {
       <Container>
         <Breadcrumbs/>
 
-        <section className='sec-8 mb-6'>
+        <section className='sec-blog mb-6'>
           <div className="title blog">
             <h1 className='h2'>Новости </h1>
             <img src={ArticleImg} alt="article-img" />

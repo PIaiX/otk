@@ -1,16 +1,17 @@
 import React from 'react';
-import FigureMain from '../components/svg/FigureMain';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import {Link} from 'react-router-dom';
 import ProductCard from '../components/ProductCard';
 import Guarantee from '../components/svg/Guarantee';
-import Woman from '../assets/imgs/woman.png'
 import StarRating from '../components/utils/StarRating';
 import NewsCard from '../components/NewsCard';
 import Quiz from '../components/Quiz';
-import Homuncule from '../assets/imgs/man.png'
+
+import Woman from '../assets/imgs/woman.png';
+import Homuncule from '../assets/imgs/man.png';
+import FigureMain from '../components/svg/FigureMain';
 import FigureMainMobile from '../components/svg/FigureMainMobile';
 
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -252,7 +253,7 @@ const Home = () => {
         </Container>
       </section>
 
-      <section className='sec-8 mb-6'>
+      <section className='sec-blog mb-6'>
         <Container>
           <div className="title mb-4 mb-md-5">
             <h2 className='mb-0'>Новости</h2>
@@ -301,7 +302,7 @@ const Home = () => {
         </Container>
       </section>
 
-      <section className='sec-9 mb-6'>
+      <section className='sec-8 mb-6'>
         <Container>
           <img src={Homuncule} alt="homuncule" className='homuncule'/>
           <div className="title">

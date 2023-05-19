@@ -5,7 +5,7 @@ import Offcanvas from 'react-bootstrap/Offcanvas';
 import Logo from '../assets/imgs/logo.png';
 import LogoColored from '../assets/imgs/logo-colored.png';
 import ShoppingCart from './svg/ShoppingCart';
-import {Link} from 'react-router-dom';
+import {Link, NavLink} from 'react-router-dom';
 import Search from './svg/Search';
 import { HiOutlineDevicePhoneMobile, HiXMark, HiBars3 } from "react-icons/hi2";
 import useIsMobile from '../hooks/useIsMobile';
@@ -48,10 +48,10 @@ const Header = () => {
           {
             (!isMobile) &&
             <ul className='list-unstyled d-flex menu'>
-              <li><a href="/">Каталог</a></li>
-              <li><a href="/">Услуги</a></li>
-              <li><a href="/">Примеры работ</a></li>
-              <li><a href="/">Контакты</a></li>
+              <li><NavLink to="/catalog">Каталог</NavLink></li>
+              <li><NavLink to="/services">Услуги</NavLink></li>
+              <li><NavLink to="/portfolio">Примеры работ</NavLink></li>
+              <li><NavLink to="/contacts">Контакты</NavLink></li>
             </ul>
           }
 
