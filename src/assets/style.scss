@@ -1,6 +1,8 @@
 @import 'bootstrapCustom';
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
+// "homepage": "https://ngf93.github.io/otk",
+
 :root {
   --h-height: 110px;
   --f-height: 150px;
@@ -369,6 +371,27 @@ button {
     margin-bottom: 4em;
   }
 }
+
+.breadcrumbs {
+  margin-top: 1em;
+  margin-bottom: 2em;
+  ul {
+    @include list();
+    @include flex(row, flex-start, center, wrap);
+    color: $gray;
+    font-weight: 500;
+    li {
+      &.divider {
+        margin: 0 .5em;
+        display: flex;
+        svg {
+          stroke-width: 3px;
+          font-size: .8em;
+        }
+      }
+    }
+  }
+}
 .star-rating {
   color: $green;
   @include flex();
@@ -391,14 +414,12 @@ button {
     --bs-dropdown-link-active-bg: #4FAC76;
   }
 }
-
 .devs {
   @include flex();
   img {
     width: 2.25em;
   }
 }
-
 .product {
   background-color: $white;
   padding: .75em;
@@ -477,15 +498,15 @@ main {
 }
 
 header {
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  width: 100%;
+  position: relative;
   z-index: 1050;
   height: var(--h-height);
   background-color: transparent;
   @include media-breakpoint-down(lg) {
     position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
     background-color: $white;
     @include shadow();
   }
@@ -680,6 +701,7 @@ header {
 }
 
 .sec-1 {
+  margin-top: calc(var(--h-height)*-1);
   position: relative;
   height: 850px;
   padding-bottom: 10em;
@@ -1217,58 +1239,147 @@ header {
 
 .sec-8 {
   .title {
+    position: relative;
     background: url(../assets/imgs/bg/bg-green.jpg) no-repeat;
     background-size: cover;
     color: $white;
     @include flex(row, space-between, center, nowrap);
     border-radius: $radius;
     padding: 1.7em 2em;
+    &.blog {
+      --img: 4em;
+      margin: var(--img) 0 calc(var(--img) + 3em);
+      @include media-breakpoint-down(xl) {
+        --img: 3em;
+      }
+      @include media-breakpoint-down(lg) {
+        --img: 2.5em;
+      }
+      @include media-breakpoint-down(md) {
+        --img: 2em;
+      }
+      @include media-breakpoint-down(sm) {
+        --img: 1em;
+      }
+    }
     @include media-breakpoint-down(lg) {
       padding: 1em 1.5em;
     }
-  }
-  .news {
-    position: relative;
+    h1, h2 {
+      margin-bottom: 0px;
+    }
     img {
-      --h: 315px;
-      @include img($h: var(--h));
-      @include media-breakpoint-down(xxxl) {
-        --h: 285px;
-      }
-      @include media-breakpoint-down(xxl) {
-        --h: 250px;
-      }
+      position: absolute;
+      top: 50%;
+      right: 5%;
+      transform: translateY(-50%);
+      width: 250px;
+      height: calc(100% + var(--img)*2);
+      z-index: 10;
+      object-fit: contain;
       @include media-breakpoint-down(lg) {
-        --h: 220px;
+        width: 200px;
+      }
+      @include media-breakpoint-down(md) {
+        width: 150px;
       }
       @include media-breakpoint-down(sm) {
-        --h: 43vw;
-      }
-    }
-    figcaption {
-      @include flex(row, space-between, center, nowrap);
-      margin-bottom: 1em;
-      h6 {
-        font-size: .95em;
-        font-weight: 500;
-      }
-      a {
-        background-color: $dark;
-        color: $white;
-        font-size: 1em;
-        width: 1.5em;
-        height: 1.5em;
-        border-radius: $radius*.25;
-        margin-left: 1em;
-        @include flex();
-        transition: $transition;
-        &:hover {
-          background-color: $dark-green;
-        }
+        width: 90px;
       }
     }
   }
 }
+.news {
+  position: relative;
+  img {
+    --h: 315px;
+    @include img($h: var(--h));
+    @include media-breakpoint-down(xxxl) {
+      --h: 285px;
+    }
+    @include media-breakpoint-down(xxl) {
+      --h: 250px;
+    }
+    @include media-breakpoint-down(lg) {
+      --h: 220px;
+    }
+    @include media-breakpoint-down(sm) {
+      --h: 43vw;
+    }
+  }
+  figcaption {
+    @include flex(row, space-between, center, nowrap);
+    margin-bottom: 1em;
+    h6 {
+      font-size: .95em;
+      font-weight: 500;
+    }
+    a {
+      background-color: $dark;
+      color: $white;
+      font-size: 1em;
+      width: 1.5em;
+      height: 1.5em;
+      border-radius: $radius*.25;
+      margin-left: 1em;
+      @include flex();
+      transition: $transition;
+      &:hover {
+        background-color: $dark-green;
+      }
+    }
+  }
+}
+.sec-blog {
+  .title {
+    --img: 4em;
+    background: url(imgs/bg/bg-green.jpg) no-repeat center;
+    background-size: cover;
+    color: $white;
+    padding: 1.7em 2em;
+    border-radius: $radius;
+    position: relative;
+    margin: var(--img) 0 calc(var(--img) + 3em);
+    h1, h2 {
+      margin-bottom: 0px;
+    }
+    img {
+      position: absolute;
+      top: 50%;
+      right: 5%;
+      transform: translateY(-50%);
+      width: 250px;
+      height: calc(100% + var(--img)*2);
+      z-index: 10;
+    }
+  }
+}
+article {
+  .text {
+    img {
+      width: 48%;
+      float: right;
+      border-radius: $radius*2;
+      margin-left: 4em;
+      margin-bottom: 2em;
+      @include media-breakpoint-down(xl) {
+        border-radius: $radius;
+        margin-left: 2em;
+        margin-bottom: 1em;
+      }
+      @include media-breakpoint-down(md) {
+        width: 100%;
+        float: right;
+        margin-left: 0em;
+        margin-bottom: 1.5em;
+      }
+    }
+    p {
+      margin-bottom: 1.5em;
+    }
+  }
+}
+
 
 .sec-9 {
   --offset: 13%;
@@ -1489,6 +1600,7 @@ header {
     }
   }
 }
+
 
 footer {
   &.desktop {

@@ -3,20 +3,20 @@ import FigureMain from '../components/svg/FigureMain';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation } from 'swiper';
-import 'swiper/css';
-import 'swiper/css/navigation';
+import {Link} from 'react-router-dom';
 import ProductCard from '../components/ProductCard';
 import Guarantee from '../components/svg/Guarantee';
-
 import Woman from '../assets/imgs/woman.png'
 import StarRating from '../components/utils/StarRating';
 import NewsCard from '../components/NewsCard';
 import Quiz from '../components/Quiz';
 import Homuncule from '../assets/imgs/man.png'
 import FigureMainMobile from '../components/svg/FigureMainMobile';
+
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation } from 'swiper';
+import 'swiper/css';
+import 'swiper/css/navigation';
 
 const Home = () => {
   return (
@@ -256,7 +256,7 @@ const Home = () => {
         <Container>
           <div className="title mb-4 mb-md-5">
             <h2 className='mb-0'>Новости</h2>
-            <button type='button' className='btn-3 me-lg-5'>Читать все записи</button>
+            <Link to='blog' className='btn-3 me-lg-5'>Читать все записи</Link>
           </div>
           <Swiper
             loop={true}
@@ -277,6 +277,10 @@ const Home = () => {
               },
               1200: {
                 spaceBetween: 30,
+                slidesPerView: 4
+              },
+              1400: {
+                spaceBetween: 55,
                 slidesPerView: 4
               },
             }}

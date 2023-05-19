@@ -7,7 +7,7 @@ const NewsCard = () => {
     <figure className='news'>
       <figcaption>
         <h6 className='flex-1'>Что нужно знать перед установкой кондиционера?</h6>
-        <Link to="/" className='stretched-link'>
+        <Link to="/blog/article" className='stretched-link'>
           <BsChevronRight/>
         </Link>
       </figcaption>
