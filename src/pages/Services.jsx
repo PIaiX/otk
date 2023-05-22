@@ -46,7 +46,7 @@ const Services = () => {
             </section>
           </Col>
           <Col xl={3} className='d-none d-xl-block'>
-            <section className='sec-10 mb-5'>
+            <section className='sec-11 mb-5'>
               <div className="offer">
                 <div className="text">
                   <h3>Вместе выгоднее</h3>

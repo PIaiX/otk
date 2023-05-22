@@ -7,6 +7,7 @@ import NotFound from '../pages/NotFound'
 import Article from '../pages/Article'
 import Catalog from '../pages/Catalog'
 import Services from '../pages/Services'
+import Category from '../pages/Category'
 
 
 const router = createHashRouter(
@@ -15,6 +16,7 @@ const router = createHashRouter(
       <Route index element={<Home />}/>
       <Route path="game" element={<Home/>} />
       <Route path="catalog" element={<Catalog/>} />
+      <Route path="catalog/category" element={<Category/>} />
       <Route path="services" element={<Services/>} />
       <Route path="blog" element={<Blog />} />
       <Route path="blog/article" element={<Article/>} />
