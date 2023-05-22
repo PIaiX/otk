@@ -331,6 +331,17 @@ button {
       background-color: lighten($color: $green, $amount: 30%);
     }
   }
+  /* зеленая кнопка */
+  &-5 {
+    @extend .btn;
+    color: $dark;
+    background-color: rgba($color: $green, $alpha: 0.2);
+    font-weight: 500;
+    &:hover, &:focus, &:active, &.active {
+      color: $white;
+      background-color: rgba($color: $green, $alpha: 1);
+    }
+  }
   &[disabled] {
     pointer-events: none;
     filter: saturate(0%);
@@ -753,6 +764,7 @@ header {
   @include media-breakpoint-down(lg) {
     height: 500px;
     padding-bottom: 3em;
+    margin-top: 0px;
   }
   @include media-breakpoint-down(md) {
     height: 100vw;
@@ -1107,6 +1119,12 @@ header {
     border-radius: $radius;
     padding: 3em 9em 3em 30%;
     @include shadow();
+    &.gradient {
+      // background: url(../assets/imgs/bg/bg-gradient-2.jpg) no-repeat center;
+      background: linear-gradient(93.57deg, rgba(51, 153, 171, 0.15) 1.66%, rgba(120, 216, 72, 0.15) 54.95%, rgba(145, 238, 143, 0.15) 91.91%, rgba(145, 238, 143, 0.15) 92.86%);
+      background-size: 100% 100%;
+      
+    }
     @include media-breakpoint-down(xxxl) {
       padding: 3em 6em 3em 30%;
     }
@@ -1599,6 +1617,61 @@ header {
       height: 70px;
       top: -1.5em;
       left: 0em;
+    }
+  }
+}
+
+.sec-10 {
+  .btn-5 {
+    font-size: 1.5em;
+    justify-content: flex-start;
+    padding: 1.2em;
+    height: 100%;
+    text-align: left;
+    @include media-breakpoint-down(xxl) {
+      font-size: 1.25em;
+    }
+  }
+  .offer {
+    margin-top: 10em;
+    background-color: $blue;
+    padding: 1em 1em 1em 20%;
+    color: $white;
+    border-radius: $radius;
+    position: relative;
+    max-width: 300px;
+    margin-left: auto;
+    @include media-breakpoint-down(xxl) {
+      padding: 0.5em 0.5em 0.5em 25%;
+      margin-top: 9em;
+    }
+    &::before {
+      content: '';
+      background: url(../assets/imgs/bg/blot2.svg) no-repeat;
+      background-size: contain;
+      background-position: left bottom;
+      position: absolute;
+      left: 0px;
+      bottom: 0px;
+      width: 110%;
+      height: 110%;
+      z-index: 1;
+    }
+    .text {
+      position: relative;
+      z-index: 10;
+    }
+    img {
+      position: absolute;
+      z-index: 5;
+      top: -2em;
+      left: -20%;
+      width: 50%;
+      height: auto;
+      @include media-breakpoint-down(xxl) {
+        left: -10%;
+        width: 45%;
+      }
     }
   }
 }

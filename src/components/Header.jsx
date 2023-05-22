@@ -98,9 +98,9 @@ const Header = () => {
             <div className="offer">
               <h2>Вместе выгоднее</h2>
               <h5>Закажите оборудование и получите скидку 50% на его установку</h5>
-              <button type='button' className='btn-4 fs-12 ms-auto'>Подробнее</button>
+              <button type='button' onClick={handleCloseMenu} className='btn-4 fs-12 ms-auto'>Подробнее</button>
             </div>
-            <nav>
+            <nav onClick={handleCloseMenu}>
               <ul className='list-unstyled'>
                 <li><Link to="/">Главная</Link></li>
                 <li><Link to="/catalog">Каталог</Link></li>
