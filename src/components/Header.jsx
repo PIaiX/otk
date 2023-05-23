@@ -77,9 +77,9 @@ const Header = () => {
               <HiOutlineDevicePhoneMobile className='fs-13 d-xl-none'/>
               <span className='d-none d-xl-inline'>+7 989 368-58-62</span>
             </a>
-            <button type='button' className='cart ms-4 ms-xxxl-5'>
+            <Link to='cart' className='cart ms-4 ms-xxxl-5'>
               <ShoppingCart/>
-            </button>
+            </Link>
 
             <button type='button' className='btn-menu' onClick={(isShowMenu) ? handleCloseMenu : handleShowMenu}>
               {

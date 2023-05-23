@@ -9,7 +9,7 @@ import 'swiper/css';
 import "swiper/css/free-mode";
 import "swiper/css/thumbs";
 import 'swiper/css/pagination';
-import { Thumbs, FreeMode, Pagination } from 'swiper';
+import { Thumbs, FreeMode } from 'swiper';
 
 import { HiPlus } from "react-icons/hi2";
 import ServiceImg from '../assets/imgs/service-img.png'

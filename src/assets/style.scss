@@ -2089,6 +2089,76 @@ header {
   }
 }
 
+.sec-15 {
+  .cart-item {
+    @include flex(row, flex-start, flex-start, nowrap);
+    @include media-breakpoint-down(sm) {
+      flex-direction: column;
+    }
+    &.service {
+      align-items: center;
+      @include media-breakpoint-down(sm) {
+        align-items: flex-start;
+      }
+    }
+    &-img {
+      --w: 200px;
+      @include img(scale-down, var(--w), var(--w), 1.25em);
+      padding: 10px;
+      background: url(imgs/bg/bg-gradient.jpg) no-repeat center;
+      background-size: cover;
+      @include media-breakpoint-down(xxl) {
+        --w: 170px;
+      }
+    }
+    &-info {
+      flex: 1;
+      margin-left: 1.25em;
+      @include media-breakpoint-down(sm) {
+        margin-left: 0px;
+        margin-top: 1em;
+      }
+      ul {
+        @include list();
+        color: $gray;
+        font-size: 1.2em;
+        li {
+          margin-bottom: .75em;
+        }
+      }
+      .more {
+        @include flex(row, flex-start, center, nowrap);
+        font-size: 1.25em;
+        svg {
+          background-color: $dark;
+          color: $white;
+          font-size: 1.25em;
+          padding: .15em;
+          border-radius: 5px;
+          margin-left: .5em;
+        }
+      }
+    }
+  }
+  .box {
+    position: relative;
+    z-index: 1;
+    background-color: $light-gray;
+    padding: 1.5em;
+    border-radius: $radius;
+  }
+  .cart-img {
+    position: relative;
+    z-index: 2;
+    width: 33%;
+    width: 35%;
+    margin-left: -5%;
+    @include media-breakpoint-down(sm) {
+      display: none;
+    }
+  }
+}
+
 /* Section Blog */
 .title {
   position: relative;

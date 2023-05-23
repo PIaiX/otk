@@ -9,6 +9,7 @@ import Catalog from '../pages/Catalog'
 import Services from '../pages/Services'
 import Category from '../pages/Category'
 import Product from '../pages/Product'
+import ShoppingCart from '../pages/ShoppingCart'
 
 
 const router = createHashRouter(
@@ -19,6 +20,7 @@ const router = createHashRouter(
       <Route path="catalog" element={<Catalog/>} />
       <Route path="catalog/category" element={<Category/>} />
       <Route path="catalog/category/product" element={<Product/>} />
+      <Route path="cart" element={<ShoppingCart/>} />
       <Route path="services" element={<Services/>} />
       <Route path="blog" element={<Blog />} />
       <Route path="blog/article" element={<Article/>} />
