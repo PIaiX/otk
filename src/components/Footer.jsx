@@ -14,34 +14,34 @@ const Footer = () => {
         <nav>
           <ul>
             <li>
-              <Link to="/" className='active'>
+              <NavLink to="/" end>
                 <HiOutlineHome/>
                 <span>Главная</span>
-              </Link>
+              </NavLink>
             </li>
             <li>
-              <Link to="/">
+              <NavLink to="/catalog">
                 <HiOutlineSquares2X2/>
                 <span>Каталог</span>
-              </Link>
+              </NavLink>
             </li>
             <li>
-              <Link to="/">
+              <NavLink to="/cart">
                 <HiOutlineShoppingCart/>
                 <span>Корзина</span>
-              </Link>
+              </NavLink>
             </li>
             <li>
-              <Link to="/">
+              <NavLink to="/contacts">
                 <HiOutlinePhone/>
                 <span>Контакты</span>
-              </Link>
+              </NavLink>
             </li>
             <li>
-              <Link to="/">
+              <NavLink to="/profile">
                 <HiOutlineUser/>
                 <span>Профиль</span>
-              </Link>
+              </NavLink>
             </li>
           </ul>
         </nav>

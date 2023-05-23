@@ -369,59 +369,7 @@ button {
     filter: saturate(0%);
   }
 }
-.form-search {
-  position: relative;
-  width: 250px;
-  @include media-breakpoint-down(xxl) {
-    width: 200px;
-  }
-  input {
-    position: relative;
-    z-index: 1;
-    padding-right: 2.5em;
-    padding-left: 1em;
-  }
-  button {
-    position: absolute;
-    top: 0px;
-    right: 0px;
-    z-index: 10;
-    height: 100%;
-    width: 2em;
-    font-size: 1.375em;
-    color: $gray;
-  }
-}
-.form-filter {
-  max-width: 300px;
-  font-size: 1.25em;
-  fieldset {
-    legend {
-      font-size: 1em;
-      font-weight: 600;
-      float: unset;
-    }
-  }
-  ul {
-    @include list();
-  }
-  input {
-    border-color: $gray;
-    border-radius: .25em;
-    padding: .5em 1em;
-  }
-  label {
-    input {
-      padding: 0px;
-      margin-right: .5em;
-    }
-  }
-  ul {
-    li {
-      margin-bottom: .75em;
-    }
-  }
-}
+
 
 /* Blocks */
 .flex-1 {flex:1;}
@@ -722,6 +670,29 @@ header {
     @include media-breakpoint-down(lg) {
       @include flex();
     }
+  }
+}
+.form-search {
+  position: relative;
+  width: 250px;
+  @include media-breakpoint-down(xxl) {
+    width: 200px;
+  }
+  input {
+    position: relative;
+    z-index: 1;
+    padding-right: 2.5em;
+    padding-left: 1em;
+  }
+  button {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    z-index: 10;
+    height: 100%;
+    width: 2em;
+    font-size: 1.375em;
+    color: $gray;
   }
 }
 .offcanvas-search {
@@ -1763,6 +1734,20 @@ header {
 
 .sec-12 {
   padding-top: 3em;
+  .subcategories {
+    @include list();
+    @include flex(row, flex-start, flex-start, wrap);
+    @include media-breakpoint-down(lg) {
+      width: 100%;
+      margin-bottom: 1em;
+    }
+    li {
+      margin-bottom: .5em;
+      &:not(:last-child){
+        margin-right: 1em;
+      }
+    }
+  }
   .box {
     position: relative;
     margin-top: 10em;
@@ -1771,6 +1756,12 @@ header {
     padding: 2em;
     border-radius: $radius;
     color: $white;
+    @include media-breakpoint-down(xxl) {
+      margin-top: 7em;
+    }
+    @include media-breakpoint-down(md) {
+      margin-top: 4em;
+    }
     &::after {
       content: '';
       position: absolute;
@@ -1781,17 +1772,108 @@ header {
       height: 250px;
       background: url(imgs/man2.png) no-repeat center;
       background-size: contain;
+      @include media-breakpoint-down(xxxl) {
+        right: 7%;
+      }
+      @include media-breakpoint-down(xxl) {
+        right: 3%;
+        top: -4em;
+        width: 180px;
+        height: 200px;
+      }
+      @include media-breakpoint-down(xl) {
+        content: unset;
+      }
     }
     form {
       @include flex(row, flex-start, stretch, nowrap);
+      @include media-breakpoint-down(md) {
+        flex-direction: column;
+        align-items: center;
+      }
       input {
         flex: 1;
         margin-right: 1em;
+        @include media-breakpoint-down(md) {
+          margin-right: 0em;
+          margin-bottom: 1em;
+        }
       }
     }
   }
-  .product img {
-    --height: 300px;
+  .product {
+    @include media-breakpoint-down(xxl) {
+      font-size: 1.1em;
+    }
+    @include media-breakpoint-down(xl) {
+      font-size: 1em;
+    }
+    @include media-breakpoint-down(lg) {
+      font-size: .9em;
+    }
+    @include media-breakpoint-down(md) {
+      font-size: 1em;
+    }
+    img {
+      @include media-breakpoint-up(xxxl) {
+        --height: 300px;
+      }
+    }
+  }
+}
+.form-filter {
+  max-width: 300px;
+  font-size: 1.25em;
+  @include media-breakpoint-down(xl) {
+    font-size: 1em;
+  }
+  @include media-breakpoint-down(lg) {
+    max-width: 100%;
+  }
+  fieldset {
+    legend {
+      font-size: 1em;
+      font-weight: 600;
+      float: unset;
+    }
+  }
+  ul {
+    @include list();
+  }
+  input {
+    border-color: $gray;
+    border-radius: .25em;
+    padding: .5em 1em;
+  }
+  label {
+    input {
+      padding: 0px;
+      margin-right: .5em;
+    }
+  }
+  ul {
+    li {
+      margin-bottom: .75em;
+    }
+  }
+}
+.offcanvas-filter {
+  @include media-breakpoint-down(lg) {
+    padding: var(--h-height) 0px var(--f-height);
+  }
+  .offcanvas-body {
+    position: relative;
+    @include media-breakpoint-down(lg) {
+      padding: 2em 1em 1em;
+    }
+    .close {
+      position: absolute;
+      top: 0.5em;
+      right: 0.8em;
+      padding: 0.25em;
+      border-radius: $radius*0.2;
+      font-size: 1.25em;
+    }
   }
 }
 
