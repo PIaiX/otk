@@ -206,6 +206,7 @@ h6  {
   &-9 {font-weight: 900;}
 }
 .gray {color: $gray;}
+.main-font {font-family: $main-font;}
 
 
 /* Form elements */
@@ -276,6 +277,19 @@ input {
 label {
   @include flex(row, flex-start, center, nowrap);
   span {flex:1;}
+  &.pill {
+    div {
+      @extend .btn;
+      color: $dark;
+      background-color: rgba($color: $green, $alpha: 0.2);
+      font-weight: 500 !important;
+      padding: 0.65em !important;
+    }
+    input:checked + div {
+      color: $white;
+      background-color: rgba($color: $green, $alpha: 1);
+    }
+  }
 }
 select {
   @include no-appearance();
@@ -326,8 +340,8 @@ button {
     background-color: transparent;
     &:hover, &:focus, &:active, &.active {
       color: $white;
-      border: 1px solid $green;
-      background-color: $green;
+      border: 1px solid $dark;
+      background-color: $dark;
     }
   }
   /* темная кнопка */
@@ -353,7 +367,7 @@ button {
       background-color: lighten($color: $green, $amount: 30%);
     }
   }
-  /* зеленая кнопка */
+  /* светло-зеленая кнопка */
   &-5 {
     @extend .btn;
     color: $dark;
@@ -1873,6 +1887,204 @@ header {
       padding: 0.25em;
       border-radius: $radius*0.2;
       font-size: 1.25em;
+    }
+  }
+}
+
+.sec-13 {
+  --sliders: 580px;
+  display: inline-block;
+  @include media-breakpoint-down(xxxl) {
+    --sliders: 480px;
+  }
+  @include media-breakpoint-down(xxl) {
+    --sliders: 415px;
+  }
+  @include media-breakpoint-down(xl) {
+    --sliders: 350px;
+  }
+  @include media-breakpoint-down(lg) {
+    --sliders: 600px;
+  }
+  @include media-breakpoint-down(md) {
+    --sliders: 420px;
+  }
+  @include media-breakpoint-down(sm) {
+    --sliders: 75vw;
+  }
+  .product-grid {
+    --h: 150px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: var(--h) auto auto;
+    grid-template-areas: 
+    "area2 area1" 
+    "area2 area3" 
+    "area4 area3";
+    gap: 20px 80px;
+    @include media-breakpoint-down(xxxl) {
+      gap: 20px 60px;
+    }
+    @include media-breakpoint-down(xxl) {
+      --h: 130px;
+      gap: 20px 45px;
+    }
+    @include media-breakpoint-down(lg) {
+      grid-template-columns: 1fr;
+      grid-template-rows: auto;
+      grid-template-areas: "area1" "area2" "area3" "area4";
+    }
+    &>* {min-width: 0px;}
+    .area-1 {
+      grid-area: area1;
+    }
+    .area-2 {
+      grid-area: area2;
+      @include flex(row, flex-start, stretch, nowrap);
+    }
+    .area-3 {
+      grid-area: area3;
+    }
+    .area-4 {
+      grid-area: area4;
+    }
+
+  }
+  .thumbslides {
+    --w: 100px;
+    width: var(--w);
+    height: var(--sliders);
+    @include media-breakpoint-down(xl) {
+      --w: 80px;
+    }
+    @include media-breakpoint-down(sm) {
+      --w: 50px;
+    }
+    .swiper-slide {
+      height: fit-content;
+    }
+    img {
+      @include img($fit: contain, $h: var(--w), $w: var(--w), $rad: 10px);
+      background-color: $white;
+    }
+  }
+  .mainslides {
+    margin-left: 1.25em;
+    flex: 1;
+    background: url(imgs/bg/bg-gradient.jpg) no-repeat center;
+    background-size: cover;
+    padding: 1em;
+    border-radius: $radius;
+    height: var(--sliders);
+    margin-bottom: 3em;
+    @include media-breakpoint-down(xl) {
+      margin-left: 1em;
+    }
+    img {
+      @include img($fit: contain, $rad: 10px);
+      background-color: $white;
+      border-radius: $radius;
+    }
+  }
+  .params-list {
+    @include list();
+    @include flex(row, flex-start, flex-start, wrap);
+    margin-bottom: 2em;
+    li {
+      margin-bottom: .5em;
+      &:not(:last-child) {margin-right: 1em;}
+    }
+  }
+  .price-box {
+    background-color: $light-gray;
+    padding: 1.25em;
+    border-radius: $radius;
+    @include flex(row, space-between, center, nowrap);
+    &:not(:last-child){margin-bottom: 2em;}
+    .price {
+      font-size: 1.5em;
+      font-weight: 700;
+      color: $black;
+    }
+    .info {
+      color: $gray;
+      font-size: 0.75em;
+      font-weight: 500;
+    }
+  }
+  .set {
+    @include flex(row, flex-start, center, nowrap);
+    border-bottom: 1px solid $light-gray;
+    padding-bottom: 1em;
+    margin-bottom: 1em;
+    &-item {
+      --w: 220px;
+      width: var(--w);
+      @include media-breakpoint-down(xl) {
+        --w: 200px;
+      }
+      @include media-breakpoint-down(sm) {
+        --w: 135px;
+      }
+      img {
+        background: url(imgs/bg/bg-gradient.jpg) no-repeat center;
+        background-size: 100% 100%;
+        border-radius: $radius;
+        padding: 5px;
+        overflow: hidden;
+        @include safariFix();
+        @include img(scale-down, var(--w), var(--w));
+        margin-bottom: .5em;
+      }
+      h6 {
+        @include clamp(2, 1.2em, true);
+        margin-bottom: 1em;
+      }
+      &-price {
+        @include flex(row, space-between, center, nowrap);
+        .old {
+          color: $gray;
+          text-decoration: line-through;
+        }
+        .new {
+          color: $black;
+          font-weight: 600;
+        }
+      }
+    }
+    &-icon {
+      font-size: 2em;
+      stroke-width: 1px;
+      margin: 0 .5em;
+      @include media-breakpoint-down(sm) {
+        font-size: 1.5em;
+      }
+    }
+  }
+  .text {
+    h3 {
+      color: $gray;
+      font-size: 1.6em;
+      margin-bottom: 1em;
+    }
+    ul {
+      @include list();
+      font-size: 1.2em;
+      li {
+        margin-bottom: .5em;
+      }
+    }
+  }
+}
+
+.sec-14 {
+  .product {
+    font-size: 1.15em;
+    @include media-breakpoint-down(xxl) {
+      font-size: 1.1em;
+    }
+    @include media-breakpoint-down(xl) {
+      font-size: .95em;
     }
   }
 }
