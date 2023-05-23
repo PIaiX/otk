@@ -1,27 +1,35 @@
 {
   "files": {
-    "main.css": "/otk/static/css/main.4396e394.css",
-    "main.js": "/otk/static/js/main.0ec5f5e2.js",
+    "main.css": "/otk/static/css/main.4f2c68c8.css",
+    "main.js": "/otk/static/js/main.33cd9b1a.js",
     "static/media/conditioner1.png": "/otk/static/media/conditioner1.1d4431bb150b3ae059be.png",
     "static/media/apartment.jpg": "/otk/static/media/apartment.7a91d442817c6bd3eb29.jpg",
+    "static/media/cart-img.png": "/otk/static/media/cart-img.697757e4b83b19a02d0d.png",
+    "static/media/human-full.png": "/otk/static/media/human-full.518d47590f55886b5313.png",
     "static/media/house.jpg": "/otk/static/media/house.64f405cc62c2fe156157.jpg",
     "static/media/conditioner2.png": "/otk/static/media/conditioner2.fb589367ec52e12ee993.png",
+    "static/media/man2.png": "/otk/static/media/man2.a6a7c36c7baf9e513ef4.png",
     "static/media/woman.png": "/otk/static/media/woman.2edb3ec509a04e57856f.png",
     "static/media/conditioner3.png": "/otk/static/media/conditioner3.22721355b7af5a7ab7e6.png",
     "static/media/office.jpg": "/otk/static/media/office.51a5877e42d057dee089.jpg",
     "static/media/man.png": "/otk/static/media/man.398efdb3b425be84d493.png",
+    "static/media/article-img.png": "/otk/static/media/article-img.ba0b5d7758f8933a725b.png",
+    "static/media/service-img.png": "/otk/static/media/service-img.278811f0f04023dede19.png",
     "static/media/human.png": "/otk/static/media/human.3922736283a54ea0306b.png",
     "static/media/go.svg": "/otk/static/media/go.1fa522ec550185df401c.svg",
     "static/media/Racama.otf": "/otk/static/media/Racama.7745ff66afcd168cf861.otf",
+    "static/media/hit.svg": "/otk/static/media/hit.466036eb08c27160a34d108974ae2fc4.svg",
     "static/media/plaixIcon.svg": "/otk/static/media/plaixIcon.bc97f35c12935ec378f07475d215f690.svg",
+    "static/media/blot2.svg": "/otk/static/media/blot2.fee761dc36aba9abf56e.svg",
     "static/media/blot.svg": "/otk/static/media/blot.7aeed329062736887953.svg",
     "index.html": "/otk/index.html",
+    "static/media/mark.svg": "/otk/static/media/mark.15a93fedb5a08079dfde.svg",
     "static/media/chevron-down.svg": "/otk/static/media/chevron-down.2dbbddfd9f2bd3e1ef5d.svg",
-    "main.4396e394.css.map": "/otk/static/css/main.4396e394.css.map",
-    "main.0ec5f5e2.js.map": "/otk/static/js/main.0ec5f5e2.js.map"
+    "main.4f2c68c8.css.map": "/otk/static/css/main.4f2c68c8.css.map",
+    "main.33cd9b1a.js.map": "/otk/static/js/main.33cd9b1a.js.map"
   },
   "entrypoints": [
-    "static/css/main.4396e394.css",
-    "static/js/main.0ec5f5e2.js"
+    "static/css/main.4f2c68c8.css",
+    "static/js/main.33cd9b1a.js"
   ]
 }
