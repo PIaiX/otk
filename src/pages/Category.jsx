@@ -6,7 +6,6 @@ import Accordion from 'react-bootstrap/Accordion';
 import Offcanvas from 'react-bootstrap/Offcanvas';
 import Breadcrumbs from '../components/Breadcrumbs';
 import ProductCard from '../components/ProductCard';
-import HumanFull from '../assets/imgs/bg/human-full.png';
 import LongDash from '../components/svg/LongDash';
 import { HiAdjustmentsHorizontal, HiXMark } from "react-icons/hi2";
 import Offer from '../components/Offer';
