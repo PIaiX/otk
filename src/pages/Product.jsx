@@ -116,8 +116,8 @@ const Product = () => {
                   <p className='fs-12 mb-3'>В комплекте дешевле:</p>
                   <div className="set">
                     <div className="set-item">
-                      <img src={ServiceImg} alt="ServiceImg" />
-                      <h6>Установка кондиционера под ключ</h6>
+                      <img src="imgs/img.png" alt="Royal Clima GLORIA 2022" />
+                      <h6>Royal Clima GLORIA 2022</h6>
                       <div className="set-item-price">
                         <div className="old">30 200 ₽</div>
                         <div className="new">от 30 200 ₽</div>
@@ -128,8 +128,8 @@ const Product = () => {
                       <img src={ServiceImg} alt="ServiceImg" />
                       <h6>Установка кондиционера под ключ</h6>
                       <div className="set-item-price">
-                        <div className="old">30 200 ₽</div>
-                        <div className="new">от 30 200 ₽</div>
+                        <div className="old">15 000 ₽</div>
+                        <div className="new">от 8 000 ₽</div>
                       </div>
                     </div>
                   </div>

@@ -221,11 +221,11 @@ const Category = () => {
               
               <div className="box">
                 <h2 className='h1 mb-4'>Возникли вопросы?</h2>
-                <h5 className='text-center text-lg-start mt-4 mt-lg-0'>Оставьте заявку и мы перезвоним вам в течение 20 минут</h5>
+                <h5 className='mt-4 mt-lg-0'>Оставьте заявку и мы перезвоним вам в течение 20 минут</h5>
                 <form className='mb-4'>
                   <input type="tel" placeholder='+7 ___-___-__-__'/>
                   <input type="text" placeholder='Имя'/>
-                  <button type='button' className="btn-3 fw-6 px-3">Оставить заявку</button>
+                  <button type='button' className="w-xs-100 btn-3 fw-6 px-3">Оставить заявку</button>
                 </form>
                 <p>Нажимая кнопку «Отправить», вы даёте согласие на обработку персональных данных</p>
               </div>

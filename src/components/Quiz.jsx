@@ -31,7 +31,7 @@ const Quiz = () => {
             <h3>Куда вы планируете поставить кондиционер?</h3>
           </div>
           <div className="quiz-main">
-            <button type='button' className='btn-1 me-4' disabled>Назад</button>
+            <button type='button' className='btn-6 me-4' disabled>Назад</button>
             <ul className="flex-1 list-unstyled row row-cols-3 gx-2 gx-sm-3 gx-xxl-4 gx-xxxl-5">
               <li>
                 <label className='variant'>
@@ -73,7 +73,7 @@ const Quiz = () => {
             <h3>Выберите площадь помещения</h3>
           </div>
           <div className="quiz-main">
-            <button type='button' className='btn-1 me-4' onClick={() => setPage(1)}>Назад</button>
+            <button type='button' className='btn-6 me-4' onClick={() => setPage(1)}>Назад</button>
             <ul className="flex-1 list-unstyled row row-cols-2 row-cols-sm-3 g-3 gx-xxl-4 gx-xxxl-5 gy-xxl-4">
               <li>
                 <label className='variant-2'>
@@ -160,13 +160,13 @@ const Quiz = () => {
             <h3>Какой тип кондиционера хотите установить?</h3>
           </div>
           <div className="quiz-main">
-            <button type='button' className='btn-1 me-4' onClick={() => setPage(2)}>Назад</button>
+            <button type='button' className='btn-6 me-4' onClick={() => setPage(2)}>Назад</button>
             <ul className="flex-1 list-unstyled row row-cols-2 row-cols-sm-3 gx-3 gx-xxl-4 gx-xxxl-5 gy-4">
               <li>
                 <label className='variant'>
                   <input type="radio" name='conditioner' hidden/>
                   <div className='variant-visual'>
-                    <h3 className='text-center'>Настенная сплит-система</h3>
+                    <h3 className='text-center'>Настенная <br/>сплит-система</h3>
                     <img src={Conditioner1} className='object-fit-contain' alt="Настенная сплит-система" />
                   </div>
                 </label>
@@ -175,7 +175,7 @@ const Quiz = () => {
                 <label className='variant'>
                   <input type="radio" name='conditioner' hidden/>
                   <div className='variant-visual'>
-                    <h3 className='text-center'>Мультисплит система</h3>
+                    <h3 className='text-center'>Мультисплит <br/>система</h3>
                     <img src={Conditioner2} className='object-fit-contain' alt="Мультисплит система" />
                   </div>
                 </label>
@@ -184,7 +184,7 @@ const Quiz = () => {
                 <label className='variant'>
                   <input type="radio" name='conditioner' hidden/>
                   <div className='variant-visual'>
-                    <h3 className='text-center'>Кассетный кондиционер</h3>
+                    <h3 className='text-center'>Кассетный <br/>кондиционер</h3>
                     <img src={Conditioner3} className='object-fit-contain' alt="Кассетный кондиционер" />
                   </div>
                 </label>
@@ -201,8 +201,9 @@ const Quiz = () => {
           <div className="quiz-top">
             <h3>Скидка 10% уже ждет вас</h3>
           </div>
-          <div className="quiz-main">
-            <div className='py-4 py-md-5'>
+          <div className="quiz-main last">
+            <button type='button' className='btn-6' onClick={() => setPage(1)}>Начать сначала</button>
+            <div className='content'>
               <h3>Оставьте контактные данные и менеджер перезвонит вам </h3>
               <div className="d-md-flex fs-12 mb-2">
                 <input type="tel" placeholder='+7 ___-___-__-__' className='mb-3 mb-md-0 me-md-4 me-lg-5'/>

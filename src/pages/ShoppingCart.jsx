@@ -20,7 +20,7 @@ const ShoppingCart = () => {
 
           <Row xs={1} xl={2}>
             <Col className='pe-xxxl-5'>
-              <ul className='list-unstyled pb-4 pb-xxl-5'>
+              <ul className='list-unstyled pb-sm-4 pb-xxl-5'>
                 <li className='mb-4'><CartItem/></li>
               </ul>
 
@@ -31,7 +31,7 @@ const ShoppingCart = () => {
               <CartItemService/>
             </Col>
             <Col className='ps-xxxl-5 mt-5 mt-xl-0'>
-              <div className="d-flex align-items-center justify-content-end">
+              <div className="position-relative d-flex align-items-center justify-content-end">
                 <div className="box">
                   <h3 className='fw-6'>Заказ № 5432–56</h3>
                   <h5>на сумму 38 200₽</h5>

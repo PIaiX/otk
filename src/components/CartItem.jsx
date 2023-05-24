@@ -12,12 +12,12 @@ const CartItem = () => {
           <li><span className='fw-6'>Рекомендованная площадь помещения</span> 22 м</li>
           <li><span className='fw-6'>Инверторный компрессор</span> Да</li>
         </ul>
-        <div className="d-flex justify-content-between mt-4">
+        <div className="d-flex flex-column flex-md-row-reverse justify-content-between mt-4">
+          <h3 className='mb-3 mb-md-0'>от 30 200 ₽</h3>
           <button type='button' className='more'>
             <span>Показать еще</span>
             <HiChevronDown/>
           </button>
-          <h3 className='mb-0'>от 30 200 ₽</h3>
         </div>
       </div>
     </div>

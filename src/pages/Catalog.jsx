@@ -5,6 +5,7 @@ import Col from 'react-bootstrap/Col';
 import CategoryCard from '../components/CategoryCard';
 import Hit from '../assets/imgs/icons/hit.svg';
 import ProductCard from '../components/ProductCard';
+import LogoColored from '../assets/imgs/logo-colored.png';
 
 const Catalog = () => {
   return (
@@ -40,6 +41,11 @@ const Catalog = () => {
                     img={"imgs/category-3.png"}
                   />
                 </li>
+                <li className='d-md-none'>
+                  <figure className='category-card cap'>
+                    <img src={LogoColored} alt="cap" />
+                  </figure>
+                </li>
               </ul>
             </Col>
             <Col xs={12} lg={8} xl={3} className='position-relative mt-5 mt-xl-0'>
@@ -58,7 +64,7 @@ const Catalog = () => {
               <Col md={12} xxl={9}>
                 <div className="box">
                   <h3>Оставьте заявку на подбор кондиционера</h3>
-                  <h5 className='text-center text-lg-start mt-4 mt-lg-0'>И мы перезвоним в течение 20 минут, чтобы ответить на все ваши вопросы</h5>
+                  <h5 className='mt-4 mt-lg-0'>И мы перезвоним в течение 20 минут, чтобы ответить на все ваши вопросы</h5>
                   <form>
                     <input type="tel" placeholder='+7 ___-___-__-__'/>
                     <input type="text" placeholder='Имя'/>

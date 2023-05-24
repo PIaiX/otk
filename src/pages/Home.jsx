@@ -139,7 +139,9 @@ const Home = () => {
                 className='offers-slider'
                 spaceBetween={5}
                 slidesPerView={2}
-                navigation
+                navigation={{
+                  enabled: false
+                }}
                 breakpoints={{
                   576: {
                     spaceBetween: 10,
@@ -147,7 +149,12 @@ const Home = () => {
                   },
                   768: {
                     spaceBetween: 30,
-                    slidesPerView: 2
+                    slidesPerView: 2,
+                    navigation: {
+                      enabled: true,
+                      nextEl: '.swiper-button-next',
+                      prevEl: '.swiper-button-prev',
+                    },
                   },
                   992: {
                     spaceBetween: 30,
@@ -193,7 +200,7 @@ const Home = () => {
             <form>
               <input type="tel" placeholder='+7 ___-___-__-__'/>
               <input type="text" placeholder='Имя'/>
-              <button type='button' className="btn-1 fw-6">Отправить</button>
+              <button type='button' className="btn-1 fw-6 w-xs-100">Отправить</button>
               <p>Нажимая кнопку «Отправить», вы даёте согласие на обработку персональных данных</p>
             </form>
             
