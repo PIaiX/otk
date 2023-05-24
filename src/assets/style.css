@@ -9940,29 +9940,35 @@ header .btn-menu {
   margin-top: calc(var(--h-height) * -1);
   position: relative;
   height: 850px;
-  padding-bottom: 10em;
+  padding-bottom: 10%;
+}
+@media (max-width: 1399.98px) {
+  .sec-1 {
+    padding-bottom: 12%;
+  }
 }
 @media (max-width: 1199.98px) {
   .sec-1 {
     height: 650px;
-    padding-bottom: 5em;
+    padding-bottom: 11%;
   }
 }
 @media (max-width: 991.98px) {
   .sec-1 {
     height: 500px;
-    padding-bottom: 3em;
     margin-top: 0px;
   }
 }
 @media (max-width: 767.98px) {
   .sec-1 {
     height: 100vw;
+    padding-bottom: 20%;
   }
 }
 @media (max-width: 575.98px) {
   .sec-1 {
     height: 130vw;
+    padding-bottom: 25%;
   }
 }
 .sec-1 svg {
@@ -9980,6 +9986,11 @@ header .btn-menu {
   transition: 300ms ease-in-out;
 }
 @media (max-width: 767.98px) {
+  .sec-1 svg .link-text {
+    font-size: 0.8em;
+  }
+}
+@media (max-width: 575.98px) {
   .sec-1 svg .link-text {
     font-size: 0.9em;
   }
@@ -10280,7 +10291,7 @@ header .btn-menu {
 }
 @media (max-width: 575.98px) {
   .sec-4 .svg .round {
-    font-size: 1.55em;
+    font-size: 1.53em;
   }
 }
 .sec-4 .svg .title {

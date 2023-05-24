@@ -18,8 +18,8 @@ const FigureMainMobile = (props) => {
           dur="30s"
           repeatCount="indefinite"/>
       </text>
-      <Link to="/" className='link'>
-        <text x="227" y="378" className='link-text'>в каталог</text>
+      <Link to="/catalog" className='link'>
+        <text x="230" y="378" className='link-text'>в каталог</text>
       </Link>
       <defs>
         <clipPath id="figure-1-mob">

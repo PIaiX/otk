@@ -17,7 +17,7 @@ const FigureMain = (props) => {
           dur="30s"
           repeatCount="indefinite"/>
       </text>
-      <Link to="/" className='link'>
+      <Link to="/catalog" className='link'>
         <text x="1358" y="735" className='link-text'>в каталог</text>
       </Link>
       <defs>
