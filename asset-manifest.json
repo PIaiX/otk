@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/otk/static/css/main.bd98b563.css",
-    "main.js": "/otk/static/js/main.2a22222e.js",
+    "main.css": "/otk/static/css/main.9ffb07f3.css",
+    "main.js": "/otk/static/js/main.429efb44.js",
     "static/media/conditioner1.png": "/otk/static/media/conditioner1.1d4431bb150b3ae059be.png",
     "static/media/apartment.jpg": "/otk/static/media/apartment.7a91d442817c6bd3eb29.jpg",
     "static/media/cart-img.png": "/otk/static/media/cart-img.697757e4b83b19a02d0d.png",
@@ -24,11 +24,11 @@
     "index.html": "/otk/index.html",
     "static/media/mark.svg": "/otk/static/media/mark.15a93fedb5a08079dfde.svg",
     "static/media/chevron-down.svg": "/otk/static/media/chevron-down.2dbbddfd9f2bd3e1ef5d.svg",
-    "main.bd98b563.css.map": "/otk/static/css/main.bd98b563.css.map",
-    "main.2a22222e.js.map": "/otk/static/js/main.2a22222e.js.map"
+    "main.9ffb07f3.css.map": "/otk/static/css/main.9ffb07f3.css.map",
+    "main.429efb44.js.map": "/otk/static/js/main.429efb44.js.map"
   },
   "entrypoints": [
-    "static/css/main.bd98b563.css",
-    "static/js/main.2a22222e.js"
+    "static/css/main.9ffb07f3.css",
+    "static/js/main.429efb44.js"
   ]
 }
