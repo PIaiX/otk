@@ -3,7 +3,6 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import {Link} from 'react-router-dom';
-import HumanFull from '../assets/imgs/bg/human-full.png';
 import Offer from '../components/Offer';
 
 const Services = () => {
