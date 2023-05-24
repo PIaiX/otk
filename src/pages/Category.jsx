@@ -9,6 +9,7 @@ import ProductCard from '../components/ProductCard';
 import HumanFull from '../assets/imgs/bg/human-full.png';
 import LongDash from '../components/svg/LongDash';
 import { HiAdjustmentsHorizontal, HiXMark } from "react-icons/hi2";
+import Offer from '../components/Offer';
 
 const Category = () => {
   const [isShowFilter, setIsShowFilter] = useState(false);
@@ -129,16 +130,7 @@ const Category = () => {
                 </Offcanvas.Body>
               </Offcanvas>
 
-              <section className='d-none d-xl-block sec-11 mb-5'>
-                <div className="offer">
-                  <div className="text">
-                    <h3>Вместе выгоднее</h3>
-                    <p>Закажите оборудование и получите скидку 50% на его установку</p>
-                    <button type='button' className='btn-4 mt-3 ms-auto'>Подробнее</button>
-                  </div>
-                  <img src={HumanFull} alt="HumanFull" />
-                </div>
-              </section>
+              <Offer className={'d-none d-lg-block mb-5'}/>
             </Col>
             <Col lg={9}>
               <div className='d-flex align-items-center justify-content-between flex-wrap flex-lg-nowrap mb-5'>

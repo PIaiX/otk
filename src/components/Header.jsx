@@ -10,6 +10,7 @@ import Search from './svg/Search';
 import { HiOutlineDevicePhoneMobile, HiXMark, HiBars3 } from "react-icons/hi2";
 import useIsMobile from '../hooks/useIsMobile';
 import Devs from './utils/Devs';
+import Offer from './Offer';
 
 const Header = () => {
   const {isMobile} = useIsMobile('991px');
@@ -95,11 +96,8 @@ const Header = () => {
       <Offcanvas show={isShowMenu} onHide={handleCloseMenu} className="offcanvas-menu" placement={'end'}>
         <Offcanvas.Body>
           <Container>
-            <div className="offer">
-              <h2>Вместе выгоднее</h2>
-              <h5>Закажите оборудование и получите скидку 50% на его установку</h5>
-              <button type='button' onClick={handleCloseMenu} className='btn-4 fs-12 ms-auto'>Подробнее</button>
-            </div>
+            <Offer onClick={handleCloseMenu}/>
+            
             <nav onClick={handleCloseMenu}>
               <ul className='list-unstyled'>
                 <li><Link to="/">Главная</Link></li>

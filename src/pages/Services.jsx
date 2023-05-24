@@ -4,6 +4,7 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import {Link} from 'react-router-dom';
 import HumanFull from '../assets/imgs/bg/human-full.png';
+import Offer from '../components/Offer';
 
 const Services = () => {
   return (
@@ -46,16 +47,7 @@ const Services = () => {
             </section>
           </Col>
           <Col xl={3} className='d-none d-xl-block'>
-            <section className='sec-11 mb-5'>
-              <div className="offer">
-                <div className="text">
-                  <h3>Вместе выгоднее</h3>
-                  <p>Закажите оборудование и получите скидку 50% на его установку</p>
-                  <button type='button' className='btn-4 mt-3 ms-auto'>Подробнее</button>
-                </div>
-                <img src={HumanFull} alt="HumanFull" />
-              </div>
-            </section>
+            <Offer />
           </Col>
         </Row>
       </Container>
