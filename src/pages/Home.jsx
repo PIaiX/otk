@@ -87,7 +87,7 @@ const Home = () => {
 
       <section className='sec-4 mb-6'>
         <Container>
-          <h2>ОТК-СЕРВИС доверяют более 2 000 клиентов</h2>
+          <h2>ОТК-СЕРВИС доверяют более 2&nbsp;000 клиентов</h2>
           <Row className='gx-4 gx-xxl-5'>
             <Col md={5}>
               <img src="imgs/img5.jpg" alt="" className='img-1 mb-4'/>
