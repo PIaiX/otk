@@ -9993,19 +9993,17 @@ header .btn-menu {
   font-weight: 500;
   letter-spacing: 2.75px;
   transform-origin: 1409px 728px;
-  animation: rotation 30s infinite linear;
 }
 @media (max-width: 767.98px) {
   .sec-1 svg .round {
-    font-size: 0.8em;
+    font-size: 0.85em;
     letter-spacing: 1px;
     transform-origin: 258px 372px;
-    animation: rotation 30s infinite linear;
   }
 }
 @media (max-width: 575.98px) {
   .sec-1 svg .round {
-    font-size: 0.93em;
+    font-size: 1em;
   }
 }
 .sec-1 .container {
@@ -10273,7 +10271,6 @@ header .btn-menu {
   font-weight: 600;
   letter-spacing: 0.66px;
   transform-origin: 665px 156px;
-  animation: rotation 30s infinite linear;
 }
 @media (max-width: 767.98px) {
   .sec-4 .svg .round {
@@ -10283,7 +10280,7 @@ header .btn-menu {
 }
 @media (max-width: 575.98px) {
   .sec-4 .svg .round {
-    font-size: 1.5em;
+    font-size: 1.55em;
   }
 }
 .sec-4 .svg .title {

@@ -24,7 +24,14 @@ const Guarantee = (props) => {
       }
       <path d="M573,156a92,92 0 1,1 184,0a92,92 0 1,1 -184,0" id="MyPath" fill="none"/>
       <text className="round">
-        <textPath href="#MyPath" side="right">безупречная репутация ● безупречная репутация ● </textPath>
+        <textPath href="#MyPath" side="left">безупречная репутация ● безупречная репутация ● </textPath>
+        <animateTransform attributeName="transform"
+          attributeType="XML"
+          type="rotate"
+          from="0 0 0"
+          to="360 0 0"
+          dur="30s"
+          repeatCount="indefinite"/>
       </text>
       <image x="595" y="78" width="135" height="135" xlinkHref={Thumb}/>
       <defs>

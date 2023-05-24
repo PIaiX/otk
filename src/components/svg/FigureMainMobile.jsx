@@ -9,7 +9,14 @@ const FigureMainMobile = (props) => {
       <rect x="216" y="330" width="85" height="85" rx="42.5" fill="#2C2C2C"/>
       <path d="M211,372a47,47 0 1,1 95,0a47,47 0 1,1 -95,0" id="MyPath2-mob" fill="none"/>
       <text className="round">
-        <textPath href="#MyPath2-mob" side="right">перейти • перейти • перейти • перейти • </textPath>
+        <textPath href="#MyPath2-mob" side="left">перейти • перейти • перейти • перейти • </textPath>
+        <animateTransform attributeName="transform"
+          attributeType="XML"
+          type="rotate"
+          from="0 0 0"
+          to="360 0 0"
+          dur="30s"
+          repeatCount="indefinite"/>
       </text>
       <Link to="/" className='link'>
         <text x="227" y="378" className='link-text'>в каталог</text>

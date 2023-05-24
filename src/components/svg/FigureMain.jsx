@@ -7,8 +7,15 @@ const FigureMain = (props) => {
       <image preserveAspectRatio="xMidYMin meet" width="1920" height="1305" xlinkHref={props.img} clipPath="url(#figure-1)"/>
       <rect x="1324" y="643" width="170" height="170" rx="85" fill="#2C2C2C"/>
       <path d="M1316,728a93,93 0 1,1 186,0a93,93 0 1,1 -186,0" id="MyPath2" fill="none"/>
-      <text className="round">
-        <textPath href="#MyPath2" side="right">перейти ● перейти ● перейти ● перейти ● </textPath>
+      <text className="round" transform="rotate(0 0 0)">
+        <textPath href="#MyPath2" side="left">перейти ● перейти ● перейти ● перейти ● </textPath>
+        <animateTransform attributeName="transform"
+          attributeType="XML"
+          type="rotate"
+          from="0 0 0"
+          to="360 0 0"
+          dur="30s"
+          repeatCount="indefinite"/>
       </text>
       <Link to="/" className='link'>
         <text x="1358" y="735" className='link-text'>в каталог</text>
